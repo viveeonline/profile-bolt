@@ -1,44 +1,91 @@
-import { ExternalLink, BookOpen } from 'lucide-react';
+import { ExternalLink, BookOpen, ChevronLeft, ChevronRight } from 'lucide-react';
+import { useRef } from 'react';
+
+// ==========================================
+// 📚 UPDATE YOUR BOOKS HERE
+// Best Practice: Keep this list sorted or organized as you prefer.
+// Copy and paste a block to add a new book.
+// ==========================================
+const BOOKS_DATA = [
+  {
+    id: '1',
+    title: 'Multipliers',
+    author: 'Liz Wiseman',
+    cover_image_url: 'https://m.media-amazon.com/images/I/81xIe3qI+HL._SY466_.jpg',
+    affiliate_link: '#'
+  },
+  {
+    id: '2',
+    title: 'Atomic Habits',
+    author: 'James Clear',
+    cover_image_url: 'https://m.media-amazon.com/images/I/91bYsX41DVL._SY466_.jpg',
+    affiliate_link: '#'
+  },
+  {
+    id: '3',
+    title: 'Thinking, Fast and Slow',
+    author: 'Daniel Kahneman',
+    cover_image_url: 'https://m.media-amazon.com/images/I/61fdrEuPJwL._SY466_.jpg',
+    affiliate_link: '#'
+  },
+  {
+    id: '4',
+    title: 'Start with Why',
+    author: 'Simon Sinek',
+    cover_image_url: 'https://m.media-amazon.com/images/I/71PSoeC7oAI._SY466_.jpg',
+    affiliate_link: '#'
+  },
+  // Adding more examples to demonstrate scrolling
+  {
+    id: '5',
+    title: 'The Lean Startup',
+    author: 'Eric Ries',
+    cover_image_url: 'https://m.media-amazon.com/images/I/81-QB7nDh4L._SY466_.jpg',
+    affiliate_link: '#'
+  },
+  {
+    id: '6',
+    title: 'Zero to One',
+    author: 'Peter Thiel',
+    cover_image_url: 'https://m.media-amazon.com/images/I/71uAI28kJuL._SY466_.jpg',
+    affiliate_link: '#'
+  },
+  {
+    id: '7',
+    title: 'Good to Great',
+    author: 'Jim Collins',
+    cover_image_url: 'https://m.media-amazon.com/images/I/61YfNbrM-WL._SY466_.jpg',
+    affiliate_link: '#'
+  },
+  {
+    id: '8',
+    title: 'Dare to Lead',
+    author: 'Brené Brown',
+    cover_image_url: 'https://m.media-amazon.com/images/I/71sCsN9F2kL._SY466_.jpg',
+    affiliate_link: '#'
+  }
+];
 
 export default function Books() {
-  // EASY MAINTENANCE: Add your books here.
-  // For images: Right-click the book cover on Amazon and select "Copy Image Address"
-  const books = [
-    {
-      id: '1',
-      title: 'Multipliers',
-      author: 'Liz Wiseman',
-      // I added a placeholder image. Replace this URL with the actual Amazon image URL
-      cover_image_url: 'https://m.media-amazon.com/images/I/81xIe3qI+HL._SY466_.jpg', 
-      affiliate_link: 'https://amazon.com/your-affiliate-link-1'
-    },
-    {
-      id: '2',
-      title: 'Atomic Habits',
-      author: 'James Clear',
-      cover_image_url: 'https://m.media-amazon.com/images/I/91bYsX41DVL._SY466_.jpg',
-      affiliate_link: 'https://amazon.com/your-affiliate-link-2'
-    },
-    {
-      id: '3',
-      title: 'Thinking, Fast and Slow',
-      author: 'Daniel Kahneman',
-      cover_image_url: 'https://m.media-amazon.com/images/I/61fdrEuPJwL._SY466_.jpg',
-      affiliate_link: 'https://amazon.com/your-affiliate-link-3'
-    },
-    {
-      id: '4',
-      title: 'Start with Why',
-      author: 'Simon Sinek',
-      cover_image_url: 'https://m.media-amazon.com/images/I/71PSoeC7oAI._SY466_.jpg',
-      affiliate_link: 'https://amazon.com/your-affiliate-link-4'
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  // Function to handle scrolling with buttons
+  const scroll = (direction: 'left' | 'right') => {
+    if (scrollRef.current) {
+      const { current } = scrollRef;
+      const scrollAmount = 320; // Scroll by roughly one card width
+      if (direction === 'left') {
+        current.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+      } else {
+        current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      }
     }
-  ];
+  };
 
   return (
-    <section id="books" className="py-24 bg-white">
+    <section id="books" className="py-24 bg-white border-t border-slate-100">
       <div className="container mx-auto px-6 lg:px-12">
-        <div className="max-w-4xl mx-auto text-center mb-16">
+        <div className="max-w-4xl mx-auto text-center mb-12">
           <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
             Books I've Read
           </h2>
@@ -48,48 +95,79 @@ export default function Books() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
-          {books.map((book) => (
-            <div
-              key={book.id}
-              className="group bg-slate-50 rounded-xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden transform hover:-translate-y-2 flex flex-col"
-            >
-              {/* Book Cover Container */}
-              <div className="relative h-64 bg-slate-200 overflow-hidden flex items-center justify-center p-4">
-                {book.cover_image_url ? (
-                  <img
-                    src={book.cover_image_url}
-                    alt={book.title}
-                    className="h-full w-auto object-contain shadow-md group-hover:scale-105 transition-transform duration-300"
-                  />
-                ) : (
-                  <BookOpen className="w-16 h-16 text-slate-400" />
-                )}
-              </div>
+        <div className="relative max-w-7xl mx-auto group/container">
+          
+          {/* LEFT ARROW BUTTON */}
+          <button 
+            onClick={() => scroll('left')}
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-8 z-10 p-3 bg-white rounded-full shadow-lg border border-slate-200 text-slate-600 hover:text-blue-600 hover:border-blue-600 transition-all duration-300 hidden md:flex"
+            aria-label="Scroll left"
+          >
+            <ChevronLeft className="w-6 h-6" />
+          </button>
 
-              {/* Content */}
-              <div className="p-6 flex flex-col flex-1">
-                <div className="mb-4 flex-1">
-                  <h3 className="text-lg font-bold text-slate-900 mb-1 leading-tight line-clamp-2">
-                    {book.title}
-                  </h3>
-                  <p className="text-slate-600 font-medium text-sm">{book.author}</p>
+          {/* RIGHT ARROW BUTTON */}
+          <button 
+            onClick={() => scroll('right')}
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-8 z-10 p-3 bg-white rounded-full shadow-lg border border-slate-200 text-slate-600 hover:text-blue-600 hover:border-blue-600 transition-all duration-300 hidden md:flex"
+            aria-label="Scroll right"
+          >
+            <ChevronRight className="w-6 h-6" />
+          </button>
+
+          {/* SCROLLABLE CONTAINER */}
+          {/* overflow-x-auto: Enables horizontal scroll */}
+          {/* snap-x: Makes it snap to elements for cleaner scrolling */}
+          {/* no-scrollbar: Hides the scrollbar (optional utility, depends on your tailwind setup) */}
+          <div 
+            ref={scrollRef}
+            className="flex gap-8 overflow-x-auto pb-12 pt-4 px-4 snap-x snap-mandatory scroll-smooth"
+            style={{ scrollbarWidth: 'thin' }} // Makes scrollbar thinner on Firefox
+          >
+            {BOOKS_DATA.map((book) => (
+              <div
+                key={book.id}
+                // min-w-[280px]: Ensures cards don't shrink too small
+                // snap-center: Ensures the card stops in the center when scrolling
+                className="min-w-[280px] md:min-w-[300px] bg-slate-50 rounded-xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden transform hover:-translate-y-2 flex flex-col snap-center"
+              >
+                {/* Book Cover Container */}
+                <div className="relative h-64 bg-slate-200 overflow-hidden flex items-center justify-center p-6">
+                  {book.cover_image_url ? (
+                    <img
+                      src={book.cover_image_url}
+                      alt={book.title}
+                      className="h-full w-auto object-contain shadow-md group-hover:scale-105 transition-transform duration-300"
+                    />
+                  ) : (
+                    <BookOpen className="w-16 h-16 text-slate-400" />
+                  )}
                 </div>
 
-                {book.affiliate_link && (
-                  <a
-                    href={book.affiliate_link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 w-full px-4 py-2 bg-white border border-blue-600 text-blue-600 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition-colors duration-200 text-sm"
-                  >
-                    Get Book
-                    <ExternalLink className="w-3 h-3" />
-                  </a>
-                )}
+                {/* Content */}
+                <div className="p-6 flex flex-col flex-1">
+                  <div className="mb-4 flex-1">
+                    <h3 className="text-lg font-bold text-slate-900 mb-1 leading-tight line-clamp-2">
+                      {book.title}
+                    </h3>
+                    <p className="text-slate-600 font-medium text-sm">{book.author}</p>
+                  </div>
+
+                  {book.affiliate_link && (
+                    <a
+                      href={book.affiliate_link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 w-full px-4 py-2 bg-white border border-blue-600 text-blue-600 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition-colors duration-200 text-sm"
+                    >
+                      Get Book
+                      <ExternalLink className="w-3 h-3" />
+                    </a>
+                  )}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
