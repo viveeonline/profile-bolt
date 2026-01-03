@@ -37,7 +37,7 @@ export default function Hero() {
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
               >
-                <Linkedin className="w-5 h-5" />
+                <Linkedin className="w-5 h-5 fill-current" />
                 <span>LinkedIn Profile</span>
               </a>
               <a
