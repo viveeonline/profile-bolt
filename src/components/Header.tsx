@@ -18,6 +18,7 @@ export default function Header() {
     { href: '#expertise', label: 'Expertise' },
     { href: '#experience', label: 'Experience' },
     { href: '#certifications', label: 'Certifications' },
+    { href: '#books', label: 'Books' },
     { href: '#education', label: 'Education' },
     { href: '#contact', label: 'Contact' }
   ];
