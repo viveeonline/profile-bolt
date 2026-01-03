@@ -2,7 +2,7 @@ import { Calendar } from 'lucide-react';
 import pegaLogo from './pegalogo.png';
 import ngaLogo from './ngalogo.png';
 import prolificsLogo from './prolificslogo.png';
-import netcrackerLogo from './netcrakerlogo.png';
+import netcrackerLogo from './netcrackerlogo.png';
 import caLogo from './calogo.png';
 import knoahLogo from './knoahlogo.jpg';
 
