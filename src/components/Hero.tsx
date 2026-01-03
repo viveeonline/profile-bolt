@@ -51,7 +51,7 @@ export default function Hero() {
             <div className="flex flex-wrap gap-6 text-sm text-slate-300 justify-center lg:justify-start">
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4" />
-                <span>+91 888-500-8000</span>
+           //     <span>+91 888-500-8000</span>
               </div>
               <div className="flex items-center gap-2">
                 <MapPin className="w-4 h-4" />
