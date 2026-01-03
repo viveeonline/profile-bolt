@@ -57,7 +57,7 @@ export default function Experience() {
           <div className="relative">
             {experiences.map((exp, index) => (
               <div key={index} className="mb-12 last:mb-0">
-                <div className="flex gap-6">
+                <div className="flex gap-6 items-center">
                   <div className="flex flex-col items-center">
                     <div className="w-16 h-16 rounded-full bg-blue-100 border-4 border-blue-600 flex items-center justify-center flex-shrink-0 overflow-hidden">
                       <img
