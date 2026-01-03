@@ -10,7 +10,7 @@ export default function Hero() {
           <div className="flex-shrink-0">
             <div className="w-48 h-48 lg:w-64 lg:h-64 rounded-full overflow-hidden border-4 border-blue-400 shadow-2xl bg-slate-700">
               <img
-                src="https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=800"
+                src="vkprofile.png?auto=compress&cs=tinysrgb&w=800"
                 alt="Vivekananda Kadukuntla - Learning & Leadership Development Leader"
                 className="w-full h-full object-cover"
               />
