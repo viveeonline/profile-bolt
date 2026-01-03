@@ -3,8 +3,6 @@ import { useRef } from 'react';
 
 // ==========================================
 // 📚 UPDATE YOUR BOOKS HERE
-// Best Practice: Keep this list sorted or organized as you prefer.
-// Copy and paste a block to add a new book.
 // ==========================================
 const BOOKS_DATA = [
   {
@@ -35,7 +33,6 @@ const BOOKS_DATA = [
     cover_image_url: 'https://m.media-amazon.com/images/I/71PSoeC7oAI._SY466_.jpg',
     affiliate_link: '#'
   },
-  // Adding more examples to demonstrate scrolling
   {
     id: '5',
     title: 'The Lean Startup',
@@ -69,11 +66,15 @@ const BOOKS_DATA = [
 export default function Books() {
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  // Function to handle scrolling with buttons
+  // Function to handle scrolling "Page by Page"
   const scroll = (direction: 'left' | 'right') => {
     if (scrollRef.current) {
       const { current } = scrollRef;
-      const scrollAmount = 320; // Scroll by roughly one card width
+      
+      // LOGIC CHANGE: Scroll by the width of the visible container (one "page")
+      // This adapts automatically to any screen size (2 books, 3 books, or 4 books wide)
+      const scrollAmount = current.clientWidth;
+      
       if (direction === 'left') {
         current.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
       } else {
@@ -116,20 +117,16 @@ export default function Books() {
           </button>
 
           {/* SCROLLABLE CONTAINER */}
-          {/* overflow-x-auto: Enables horizontal scroll */}
-          {/* snap-x: Makes it snap to elements for cleaner scrolling */}
-          {/* no-scrollbar: Hides the scrollbar (optional utility, depends on your tailwind setup) */}
           <div 
             ref={scrollRef}
             className="flex gap-8 overflow-x-auto pb-12 pt-4 px-4 snap-x snap-mandatory scroll-smooth"
-            style={{ scrollbarWidth: 'thin' }} // Makes scrollbar thinner on Firefox
+            style={{ scrollbarWidth: 'thin' }} 
           >
             {BOOKS_DATA.map((book) => (
               <div
                 key={book.id}
-                // min-w-[280px]: Ensures cards don't shrink too small
-                // snap-center: Ensures the card stops in the center when scrolling
-                className="min-w-[280px] md:min-w-[300px] bg-slate-50 rounded-xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden transform hover:-translate-y-2 flex flex-col snap-center"
+                // snap-start: Ensures the new page starts cleanly aligned to the left
+                className="min-w-[280px] md:min-w-[300px] bg-slate-50 rounded-xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden transform hover:-translate-y-2 flex flex-col snap-start"
               >
                 {/* Book Cover Container */}
                 <div className="relative h-64 bg-slate-200 overflow-hidden flex items-center justify-center p-6">
