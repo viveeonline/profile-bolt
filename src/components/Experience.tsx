@@ -63,17 +63,22 @@ export default function Experience() {
           <div className="relative">
             {experiences.map((exp, index) => (
               <div key={index} className="mb-12 last:mb-0">
-                <div className="flex gap-6">
+                <div className="flex gap-6 items-center">
                   {/* LEFT COLUMN: Logo and Line */}
                   <div className="flex flex-col items-center relative">
-                    <div className="h-full aspect-square rounded-xl bg-white border-4 border-blue-600 flex items-center justify-center flex-shrink-0 overflow-hidden p-4">
+                    {/* LOGO BOX: 
+                        - w-28 h-28: Fixed consistent size (112px)
+                        - shadow-md: Subtle lift instead of thick blue border
+                        - rounded-xl: Soft corners
+                    */}
+                    <div className="w-28 h-28 bg-white rounded-xl shadow-md border border-slate-100 flex items-center justify-center flex-shrink-0 overflow-hidden p-4">
                       <img
                         src={exp.logo}
                         alt={exp.company}
                         className="w-full h-full object-contain"
                       />
                     </div>
-                    {/* Vertical Line - Only show if not the last item */}
+                    {/* Vertical Line */}
                     {index !== experiences.length - 1 && (
                       <div className="w-1 h-24 bg-gradient-to-b from-blue-600 to-blue-200 mt-4 absolute top-full"></div>
                     )}
