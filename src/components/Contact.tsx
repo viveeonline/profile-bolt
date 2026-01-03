@@ -10,7 +10,7 @@ export default function Contact() {
           </h2>
           <div className="w-24 h-1 bg-blue-600 mx-auto mb-8"></div>
           <p className="text-lg text-slate-600">
-            Open to opportunities, collaborations, and meaningful conversations
+            Open to opportunities, collaborations, and meaningful conversations.
           </p>
         </div>
 
