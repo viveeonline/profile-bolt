@@ -1,10 +1,11 @@
 import { Calendar } from 'lucide-react';
+import pegaLogo from './pegalogo.png';
 
 export default function Experience() {
   const experiences = [
     {
       company: "Pegasystems",
-      logo: "https://via.placeholder.com/64?text=Pega",
+      logo: pegaLogo,
       role: "Learning Lead & Senior Learning Partner",
       period: "Aug 2019 – Present"
     },
