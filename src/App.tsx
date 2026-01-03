@@ -52,6 +52,7 @@ function App() {
         <Expertise />
         <Experience />
         <Certifications />
+        <Books />
         <Education />
         <Contact />
       </main>
