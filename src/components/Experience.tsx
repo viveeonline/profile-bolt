@@ -62,45 +62,62 @@ export default function Experience() {
         <div className="max-w-4xl mx-auto">
           <div className="relative">
             {experiences.map((exp, index) => (
+              // Added 'group' to handle hover effects if needed, 'mb-12' creates the gap
               <div key={index} className="mb-12 last:mb-0 relative">
-                <div className="flex gap-8 items-stretch">
+                
+                {/* ITEMS-CENTER: This ensures the logo stays vertically centered with the card */}
+                <div className="flex gap-8 items-center">
                   
-                  {/* LEFT COLUMN: Logo & Timeline */}
-                  <div className="flex flex-col items-center relative min-h-full">
+                  {/* LEFT COLUMN: Timeline & Logo */}
+                  <div className="flex flex-col items-center relative shrink-0 w-24">
                     
-                    {/* LOGO BOX: Soft rounded corners, shadow for depth */}
-                    <div className="w-24 h-24 lg:w-28 lg:h-28 bg-white rounded-2xl shadow-lg border border-slate-100 flex items-center justify-center z-10 p-4">
+                    {/* CONNECTING LINE LOGIC */}
+                    {/* The line extends up and down to connect centered logos across the margins */}
+                    <div 
+                      className={`absolute w-0.5 bg-slate-200 left-1/2 -translate-x-1/2 
+                        ${index === 0 ? 'top-1/2 bottom-[-3rem]' : ''} 
+                        ${index === experiences.length - 1 ? 'top-[-3rem] h-[calc(50%+3rem)]' : ''}
+                        ${index > 0 && index < experiences.length - 1 ? 'top-[-3rem] bottom-[-3rem]' : ''}
+                      `}
+                    ></div>
+
+                    {/* LOGO CIRCLE:
+                        - rounded-full: Perfect circle
+                        - z-10: Sits on top of the line
+                        - bg-white & border: Clean separation
+                    */}
+                    <div className="relative z-10 w-20 h-20 bg-white rounded-full shadow-sm border border-slate-200 flex items-center justify-center p-4">
                       <img
                         src={exp.logo}
                         alt={exp.company}
                         className="w-full h-full object-contain"
                       />
                     </div>
-                    
-                    {/* TIMELINE LINE: Thinner, cleaner line connecting the logos */}
-                    {index !== experiences.length - 1 && (
-                      <div className="w-0.5 bg-slate-300 absolute top-24 bottom-[-48px] lg:bottom-[-48px] z-0"></div>
-                    )}
                   </div>
 
                   {/* RIGHT COLUMN: Content Card */}
                   <div className="flex-1">
-                    <div className="bg-white rounded-2xl p-6 lg:p-8 shadow-sm border border-slate-200 hover:shadow-md transition-all duration-300 h-full flex flex-col justify-center">
-                      <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start mb-4 gap-4">
-                        <div>
-                          <h3 className="text-xl lg:text-2xl font-bold text-slate-900">
+                    <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-all duration-300">
+                      <div className="flex flex-col gap-4">
+                        
+                        {/* Header: Company & Date */}
+                        <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-2">
+                          <h3 className="text-xl font-bold text-slate-900">
                             {exp.company}
                           </h3>
-                          <p className="text-blue-700 font-semibold text-lg mt-1">
-                            {exp.role}
-                          </p>
+                          
+                          {/* DATE PILL: Neutral colors (Slate) instead of Blue */}
+                          <div className="flex items-center gap-2 bg-slate-100 text-slate-600 px-3 py-1 rounded-full text-sm font-medium w-fit">
+                            <Calendar className="w-4 h-4 text-slate-500" />
+                            <span>{exp.period}</span>
+                          </div>
                         </div>
-                        
-                        {/* DATE BADGE: Styled like a tag */}
-                        <div className="flex items-center gap-2 bg-blue-50 text-blue-700 px-4 py-1.5 rounded-full whitespace-nowrap self-start lg:self-center">
-                          <Calendar className="w-4 h-4" />
-                          <span className="text-sm font-medium">{exp.period}</span>
-                        </div>
+
+                        {/* Role: Dark Grey (Slate-600) instead of "Link Blue" */}
+                        <p className="text-slate-600 font-medium text-lg">
+                          {exp.role}
+                        </p>
+                      
                       </div>
                     </div>
                   </div>
