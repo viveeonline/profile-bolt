@@ -8,6 +8,7 @@ import Certifications from './components/Certifications';
 import Education from './components/Education';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Books from './components/Books';
 
 function App() {
   useEffect(() => {
