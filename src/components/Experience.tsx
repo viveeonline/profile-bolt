@@ -58,7 +58,7 @@ export default function Experience() {
             {experiences.map((exp, index) => (
               <div key={index} className="mb-12 last:mb-0">
                 <div className="flex gap-6 items-center">
-                  <div className="flex flex-col items-center">
+                  <div className="flex flex-col items-center relative">
                     <div className="w-16 h-16 rounded-full bg-blue-100 border-4 border-blue-600 flex items-center justify-center flex-shrink-0 overflow-hidden">
                       <img
                         src={exp.logo}
@@ -67,7 +67,7 @@ export default function Experience() {
                       />
                     </div>
                     {index !== experiences.length - 1 && (
-                      <div className="w-1 h-24 bg-gradient-to-b from-blue-600 to-blue-200 mt-4"></div>
+                      <div className="w-1 h-24 bg-gradient-to-b from-blue-600 to-blue-200 mt-4 absolute top-full"></div>
                     )}
                   </div>
 
