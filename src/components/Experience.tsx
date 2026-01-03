@@ -1,5 +1,10 @@
 import { Calendar } from 'lucide-react';
 import pegaLogo from './pegalogo.png';
+import ngaLogo from './ngalogo.png';
+import prolificsLogo from './prolificslogo.png';
+import netcrackerLogo from './netcrakerlogo.png';
+import caLogo from './calogo.png';
+import knoahLogo from './knoahlogo.jpeg';
 
 export default function Experience() {
   const experiences = [
@@ -11,31 +16,31 @@ export default function Experience() {
     },
     {
       company: "NGA Human Resources (an Alight company)",
-      logo: "https://via.placeholder.com/64?text=NGA",
+      logo: ngaLogo,
       role: "Manager – Learning and Development",
       period: "Jan 2017 – Aug 2019"
     },
     {
       company: "Prolifics",
-      logo: "https://via.placeholder.com/64?text=Prolifics",
+      logo: prolificsLogo,
       role: "Learning and Development Manager",
       period: "Aug 2014 – Jan 2017"
     },
     {
       company: "Netcracker Technology",
-      logo: "https://via.placeholder.com/64?text=Netcracker",
+      logo: netcrackerLogo,
       role: "Learning & Development Consultant",
       period: "Jul 2010 – Aug 2014"
     },
     {
       company: "CA Technologies",
-      logo: "https://via.placeholder.com/64?text=CA",
+      logo: caLogo,
       role: "Adjunct Faculty & Customer Experience Analyst",
       period: "May 2006 – Jul 2010"
     },
     {
       company: "Knoah Solutions",
-      logo: "https://via.placeholder.com/64?text=Knoah",
+      logo: knoahLogo,
       role: "Sr. Business Process Trainer",
       period: "May 2002 – May 2006"
     }
@@ -58,13 +63,13 @@ export default function Experience() {
           <div className="relative">
             {experiences.map((exp, index) => (
               <div key={index} className="mb-12 last:mb-0">
-                <div className="flex gap-6 items-center">
+                <div className="flex gap-6">
                   <div className="flex flex-col items-center relative">
-                    <div className="w-16 h-16 rounded-full bg-blue-100 border-4 border-blue-600 flex items-center justify-center flex-shrink-0 overflow-hidden">
+                    <div className="h-full aspect-square rounded-xl bg-white border-4 border-blue-600 flex items-center justify-center flex-shrink-0 overflow-hidden p-4">
                       <img
                         src={exp.logo}
                         alt={exp.company}
-                        className="w-12 h-12 object-cover"
+                        className="w-full h-full object-contain"
                       />
                     </div>
                     {index !== experiences.length - 1 && (
