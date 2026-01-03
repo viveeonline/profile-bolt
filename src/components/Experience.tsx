@@ -4,7 +4,7 @@ import ngaLogo from './ngalogo.png';
 import prolificsLogo from './prolificslogo.png';
 import netcrackerLogo from './netcrakerlogo.png';
 import caLogo from './calogo.png';
-import knoahLogo from './knoahlogo.jpeg';
+import knoahLogo from './knoahlogo.jpg';
 
 export default function Experience() {
   const experiences = [
