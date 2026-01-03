@@ -1,4 +1,5 @@
 import { Linkedin, Mail, Phone, MapPin } from 'lucide-react';
+import profileImg from './vkprofile.png';
 
 export default function Hero() {
   return (
@@ -9,8 +10,8 @@ export default function Hero() {
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
           <div className="flex-shrink-0">
             <div className="w-48 h-48 lg:w-64 lg:h-64 rounded-full overflow-hidden border-4 border-blue-400 shadow-2xl bg-slate-700">
-              <img
-                src="vkprofile.png?auto=compress&cs=tinysrgb&w=800"
+              <img 
+                src={profileImg}
                 alt="Vivekananda Kadukuntla - Learning & Leadership Development Leader"
                 className="w-full h-full object-cover"
               />
@@ -49,11 +50,11 @@ export default function Hero() {
             </div>
 
             <div className="flex flex-wrap gap-6 text-sm text-slate-300 justify-center lg:justify-start">
-              <div className="flex items-center gap-2">
+{/*              <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4" />
-           //     <span>+91 888-500-8000</span>
+                <span>+91 888-500-8000</span>
               </div>
-              <div className="flex items-center gap-2">
+ */}             <div className="flex items-center gap-2">
                 <MapPin className="w-4 h-4" />
                 <span>Hyderabad, India</span>
               </div>
