@@ -12,37 +12,37 @@ export default function Experience() {
       company: "Pegasystems",
       logo: pegaLogo,
       role: "Learning Lead & Senior Learning Partner",
-      period: "Aug 2019 – Present"
+      period: "Aug 2019 - Present"
     },
     {
       company: "NGA Human Resources (an Alight company)",
       logo: ngaLogo,
       role: "Manager – Learning and Development",
-      period: "Jan 2017 – Aug 2019"
+      period: "Jan 2017 - Aug 2019"
     },
     {
       company: "Prolifics",
       logo: prolificsLogo,
       role: "Learning and Development Manager",
-      period: "Aug 2014 – Jan 2017"
+      period: "Aug 2014 - Jan 2017"
     },
     {
       company: "Netcracker Technology",
       logo: netcrackerLogo,
       role: "Learning & Development Consultant",
-      period: "Jul 2010 – Aug 2014"
+      period: "Jul 2010 - Aug 2014"
     },
     {
       company: "CA Technologies",
       logo: caLogo,
       role: "Adjunct Faculty & Customer Experience Analyst",
-      period: "May 2006 – Jul 2010"
+      period: "May 2006 - Jul 2010"
     },
     {
       company: "Knoah Solutions",
       logo: knoahLogo,
       role: "Sr. Business Process Trainer",
-      period: "May 2002 – May 2006"
+      period: "May 2002 - May 2006"
     }
   ];
 
@@ -61,44 +61,44 @@ export default function Experience() {
 
         <div className="max-w-3xl mx-auto">
           <div className="relative">
-          {experiences.map((exp, index) => (
-            <div key={index} className="mb-12 last:mb-0">
-              <div className="flex gap-6">
-                {/* LEFT COLUMN: Logo and Line */}
-                <div className="flex flex-col items-center relative">
-                  <div className="h-full aspect-square rounded-xl bg-white border-4 border-blue-600 flex items-center justify-center flex-shrink-0 overflow-hidden p-4">
-                    <img
-                      src={exp.logo}
-                      alt={exp.company}
-                      className="w-full h-full object-contain"
-                    />
-                  </div>
-                  {/* Vertical Line */}
-                  {index !== experiences.length - 1 && (
-                    <div className="w-1 h-24 bg-gradient-to-b from-blue-600 to-blue-200 mt-4 absolute top-full"></div>
-                  )}
-                </div>
-
-                {/* RIGHT COLUMN: Content Card */}
-                {/* Moved 'flex-1' here and removed the extra padding wrapper so heights match perfectly */}
-                <div className="flex-1 bg-slate-50 rounded-xl p-6 hover:shadow-lg transition-shadow duration-300 flex flex-col justify-center border border-slate-100">
-                  <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start mb-2">
-                    <h3 className="text-xl lg:text-2xl font-bold text-slate-900">
-                      {exp.company}
-                    </h3>
-                    <div className="flex items-center gap-2 text-slate-600 whitespace-nowrap mt-2 lg:mt-0">
-                      <Calendar className="w-4 h-4" />
-                      <span className="text-sm font-medium">{exp.period}</span>
+            {experiences.map((exp, index) => (
+              <div key={index} className="mb-12 last:mb-0">
+                <div className="flex gap-6">
+                  {/* LEFT COLUMN: Logo and Line */}
+                  <div className="flex flex-col items-center relative">
+                    <div className="h-full aspect-square rounded-xl bg-white border-4 border-blue-600 flex items-center justify-center flex-shrink-0 overflow-hidden p-4">
+                      <img
+                        src={exp.logo}
+                        alt={exp.company}
+                        className="w-full h-full object-contain"
+                      />
                     </div>
+                    {/* Vertical Line - Only show if not the last item */}
+                    {index !== experiences.length - 1 && (
+                      <div className="w-1 h-24 bg-gradient-to-b from-blue-600 to-blue-200 mt-4 absolute top-full"></div>
+                    )}
                   </div>
-                  <p className="text-blue-700 font-semibold text-lg">
-                    {exp.role}
-                  </p>
+
+                  {/* RIGHT COLUMN: Content Card */}
+                  <div className="flex-1 bg-slate-50 rounded-xl p-6 hover:shadow-lg transition-shadow duration-300 flex flex-col justify-center border border-slate-100">
+                    <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start mb-2">
+                      <h3 className="text-xl lg:text-2xl font-bold text-slate-900">
+                        {exp.company}
+                      </h3>
+                      <div className="flex items-center gap-2 text-slate-600 whitespace-nowrap mt-2 lg:mt-0">
+                        <Calendar className="w-4 h-4" />
+                        <span className="text-sm font-medium">{exp.period}</span>
+                      </div>
+                    </div>
+                    <p className="text-blue-700 font-semibold text-lg">
+                      {exp.role}
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
           </div>
+        </div>
       </div>
     </section>
   );
