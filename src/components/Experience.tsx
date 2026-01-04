@@ -78,7 +78,7 @@ export default function Experience() {
                       `}
                     ></div>
 
-                    {/* LOGO CIRCLE: Large size (w-28) */}
+                    {/* LOGO CIRCLE */}
                     <div className="relative z-10 w-28 h-28 bg-white rounded-full shadow-sm border border-slate-200 flex items-center justify-center p-5">
                       <img
                         src={exp.logo}
@@ -98,14 +98,15 @@ export default function Experience() {
                           {exp.company}
                         </h3>
 
-                        {/* 2. Role (Slate Grey - Not Link Blue) */}
+                        {/* 2. Role */}
                         <p className="text-slate-600 font-medium text-lg mb-2">
                           {exp.role}
                         </p>
 
-                        {/* 3. Date Pill (Light Blue Background) */}
-                        <div className="flex items-center gap-2 bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-medium">
-                          <Calendar className="w-4 h-4" />
+                        {/* 3. Date Pill (Updated to match Education style) */}
+                        {/* Changed from bg-blue-50/text-blue-700 to bg-slate-100/text-slate-600 */}
+                        <div className="flex items-center gap-2 bg-slate-100 text-slate-600 px-3 py-1 rounded-full text-sm font-medium w-fit">
+                          <Calendar className="w-4 h-4 text-slate-500" />
                           <span>{exp.period}</span>
                         </div>
                       
