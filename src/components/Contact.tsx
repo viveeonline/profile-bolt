@@ -17,11 +17,9 @@ export default function Contact() {
     setIsSubmitting(true);
     setResult('');
 
-    // 1. Prepare the data for Web3Forms
     const object = {
       ...formData,
-      // 🔴 IMPORTANT: Replace with the Access Key you receive via email
-      access_key: '491c3693-521a-4549-98c5-2249396edc89' 
+      access_key: '491c3693-521a-4549-98c5-2249397777' // Your Access Key
     };
     const json = JSON.stringify(object);
 
@@ -39,7 +37,7 @@ export default function Contact() {
 
       if (jsonResponse.success) {
         setResult('Success! Message sent.');
-        setFormData({ name: '', email: '', subject: '', message: '' }); // Clear form
+        setFormData({ name: '', email: '', subject: '', message: '' });
       } else {
         setResult('Something went wrong. Please try again.');
       }
@@ -48,6 +46,7 @@ export default function Contact() {
       setResult('Error sending message. Please try again.');
     } finally {
       setIsSubmitting(false);
+      // Remove the success message after 5 seconds to restore layout
       setTimeout(() => setResult(''), 5000);
     }
   };
@@ -72,12 +71,11 @@ export default function Contact() {
           </p>
         </div>
 
-        {/* Grid with items-stretch to ensure equal height boxes */}
+        {/* items-stretch: Ensures both cards are always the same height */}
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto items-stretch">
           
-          {/* LEFT COLUMN: Text & LinkedIn Card */}
-          {/* Added consistent styling: bg-slate-50, rounded-3xl, border, shadow */}
-          <div className="bg-slate-50 p-8 lg:p-10 rounded-3xl border border-slate-100 shadow-sm flex flex-col justify-between h-full">
+          {/* LEFT CARD */}
+          <div className="bg-slate-50 p-8 lg:p-10 rounded-3xl border border-slate-100 shadow-sm flex flex-col h-full">
             <div>
               <h3 className="text-3xl font-bold text-slate-900 mb-6">Let's Connect</h3>
               <p className="text-lg text-slate-600 mb-8 leading-relaxed">
@@ -87,13 +85,12 @@ export default function Contact() {
               </p>
             </div>
 
-            <div className="mt-auto pt-8">
+            {/* mt-auto: Pushes button to the very bottom */}
+            <div className="mt-auto">
               <a
                 href="https://www.linkedin.com/in/vivekanandakadukuntla/"
                 target="_blank"
                 rel="noopener noreferrer"
-                // w-full: Makes button stretch full width to match the form button
-                // justify-center: Centers the text and icon
                 className="w-full inline-flex items-center justify-center gap-3 bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-blue-700 transition-all duration-300 transform hover:scale-[1.02] shadow-lg hover:shadow-blue-500/25"
               >
                 <Linkedin className="w-5 h-5 fill-current" />
@@ -102,9 +99,9 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* RIGHT COLUMN: Contact Form Card */}
-          <div className="bg-slate-50 p-8 lg:p-10 rounded-3xl border border-slate-100 shadow-sm h-full flex flex-col justify-between">
-            <form onSubmit={handleSubmit} className="space-y-6 h-full flex flex-col">
+          {/* RIGHT CARD */}
+          <div className="bg-slate-50 p-8 lg:p-10 rounded-3xl border border-slate-100 shadow-sm flex flex-col h-full">
+            <form onSubmit={handleSubmit} className="flex flex-col h-full space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-2">Name</label>
@@ -148,40 +145,47 @@ export default function Contact() {
                 />
               </div>
 
-              <div className="flex-grow">
+              {/* flex-grow: Let message box fill available space but respect boundaries */}
+              <div className="flex-grow flex flex-col">
                 <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-2">Message</label>
                 <textarea
                   id="message"
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  rows={4}
-                  className="w-full h-full min-h-[120px] px-4 py-3 rounded-xl bg-white border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all resize-none"
+                  // Removed h-full to stop overlap. Using min-h to ensure it's usable.
+                  className="w-full flex-grow min-h-[150px] px-4 py-3 rounded-xl bg-white border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all resize-none"
                   placeholder="Your message here..."
                   required
                 ></textarea>
               </div>
 
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full inline-flex items-center justify-center gap-2 bg-slate-900 text-white px-8 py-4 rounded-xl font-semibold hover:bg-slate-800 transition-all duration-300 shadow-lg disabled:opacity-70 disabled:cursor-not-allowed transform hover:scale-[1.02]"
-              >
-                {isSubmitting ? (
-                  <span>Sending...</span>
-                ) : (
-                  <>
-                    <Send className="w-5 h-5" />
-                    <span>Send Message</span>
-                  </>
-                )}
-              </button>
-              
-              {result && (
-                <p className={`text-center font-medium ${result.includes('Success') ? 'text-green-600' : 'text-red-600'}`}>
-                  {result}
-                </p>
-              )}
+              {/* mt-auto: Pushes button to bottom to match Left Card */}
+              <div className="mt-auto pt-2">
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full inline-flex items-center justify-center gap-2 bg-slate-900 text-white px-8 py-4 rounded-xl font-semibold hover:bg-slate-800 transition-all duration-300 shadow-lg disabled:opacity-70 disabled:cursor-not-allowed transform hover:scale-[1.02]"
+                >
+                  {isSubmitting ? (
+                    <span>Sending...</span>
+                  ) : (
+                    <>
+                      <Send className="w-5 h-5" />
+                      <span>Send Message</span>
+                    </>
+                  )}
+                </button>
+                
+                {/* Result Message Area */}
+                <div className="h-6 mt-4 text-center">
+                  {result && (
+                    <p className={`font-medium ${result.includes('Success') ? 'text-green-600' : 'text-red-600'}`}>
+                      {result}
+                    </p>
+                  )}
+                </div>
+              </div>
             </form>
           </div>
         </div>
