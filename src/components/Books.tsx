@@ -16,8 +16,8 @@ const BOOKS_DATA = [
     id: '2',
     title: 'Atomic Habits',
     author: 'James Clear',
-    cover_image_url: 'https://m.media-amazon.com/images/I/91bYsX41DVL._SY466_.jpg',
-    affiliate_link: '#'
+    cover_image_url: 'https://m.media-amazon.com/images/I/817HaeblezL._SY385_.jpg',
+    affiliate_link: 'https://amzn.to/4qCktL0'
   },
   {
     id: '3',
