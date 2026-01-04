@@ -19,7 +19,7 @@ export default function Contact() {
 
     const object = {
       ...formData,
-      access_key: '491c3693-521a-4549-98c5-2249397777' // Your Access Key
+      access_key: '491c3693-521a-4549-98c5-2249396edc89'
     };
     const json = JSON.stringify(object);
 
@@ -46,7 +46,6 @@ export default function Contact() {
       setResult('Error sending message. Please try again.');
     } finally {
       setIsSubmitting(false);
-      // Remove the success message after 5 seconds to restore layout
       setTimeout(() => setResult(''), 5000);
     }
   };
@@ -71,7 +70,6 @@ export default function Contact() {
           </p>
         </div>
 
-        {/* items-stretch: Ensures both cards are always the same height */}
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto items-stretch">
           
           {/* LEFT CARD */}
@@ -85,7 +83,6 @@ export default function Contact() {
               </p>
             </div>
 
-            {/* mt-auto: Pushes button to the very bottom */}
             <div className="mt-auto">
               <a
                 href="https://www.linkedin.com/in/vivekanandakadukuntla/"
@@ -96,6 +93,10 @@ export default function Contact() {
                 <Linkedin className="w-5 h-5 fill-current" />
                 <span>Connect on LinkedIn</span>
               </a>
+              
+              {/* 🟢 SPACER: Matches the height of the success message on the right (h-6 + mt-4) */}
+              {/* This pushes the LinkedIn button up to align perfectly with the Send button */}
+              <div className="h-6 mt-4"></div>
             </div>
           </div>
 
@@ -145,7 +146,6 @@ export default function Contact() {
                 />
               </div>
 
-              {/* flex-grow: Let message box fill available space but respect boundaries */}
               <div className="flex-grow flex flex-col">
                 <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-2">Message</label>
                 <textarea
@@ -153,14 +153,12 @@ export default function Contact() {
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  // Removed h-full to stop overlap. Using min-h to ensure it's usable.
                   className="w-full flex-grow min-h-[150px] px-4 py-3 rounded-xl bg-white border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all resize-none"
                   placeholder="Your message here..."
                   required
                 ></textarea>
               </div>
 
-              {/* mt-auto: Pushes button to bottom to match Left Card */}
               <div className="mt-auto pt-2">
                 <button
                   type="submit"
@@ -177,7 +175,7 @@ export default function Contact() {
                   )}
                 </button>
                 
-                {/* Result Message Area */}
+                {/* Result Message Container - Always reserves space so layout doesn't jump */}
                 <div className="h-6 mt-4 text-center">
                   {result && (
                     <p className={`font-medium ${result.includes('Success') ? 'text-green-600' : 'text-red-600'}`}>
