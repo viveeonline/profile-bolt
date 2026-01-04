@@ -60,28 +60,28 @@ const BOOKS_DATA = [
     author: 'Brené Brown',
     cover_image_url: 'https://m.media-amazon.com/images/I/71LuaXKsHAL._SY425_.jpg',
     affiliate_link: 'https://amzn.to/4jszX1Z'
-  }
+  },
   {
     id: '9',
     title: 'The Almanack Of Naval Ravikant',
     author: 'Eric Jorgenson',
     cover_image_url: 'https://m.media-amazon.com/images/I/515M4WOE73L._SY466_.jpg',
     affiliate_link: 'https://amzn.to/4bor33c'
-  }
+  },
 {
     id: '10',
     title: 'Nudge',
     author: 'Richard H. Thaler Cass R Sunstein',
     cover_image_url: 'https://m.media-amazon.com/images/I/71FlmujR6vL._SY385_.jpg',
     affiliate_link: 'https://amzn.to/3YqEyrF'
-  }
+  },
 {
     id: '11',
     title: 'Man's Search For Meaning',
     author: 'Viktor E Frankl',
     cover_image_url: 'https://m.media-amazon.com/images/I/81FDXdnrh7L._SY425_.jpg',
     affiliate_link: 'https://amzn.to/49hr1Yj'
-  }
+  },
 {
     id: '12',
     title: 'Think Like a Monk',
