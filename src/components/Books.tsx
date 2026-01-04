@@ -9,8 +9,8 @@ const BOOKS_DATA = [
     id: '1',
     title: 'Multipliers',
     author: 'Liz Wiseman',
-    cover_image_url: 'https://m.media-amazon.com/images/I/81xIe3qI+HL._SY466_.jpg',
-    affiliate_link: '#'
+    cover_image_url: 'https://m.media-amazon.com/images/I/81UgpHs1vrL._SY385_.jpg',
+    affiliate_link: 'https://amzn.to/4bjv6xL'
   },
   {
     id: '2',
@@ -21,45 +21,73 @@ const BOOKS_DATA = [
   },
   {
     id: '3',
-    title: 'Thinking, Fast and Slow',
-    author: 'Daniel Kahneman',
-    cover_image_url: 'https://m.media-amazon.com/images/I/61fdrEuPJwL._SY466_.jpg',
-    affiliate_link: '#'
+    title: 'The Thinking Machine',
+    author: 'Stephen Witt',
+    cover_image_url: 'https://m.media-amazon.com/images/I/41PSQ-FuQqL._SY445_SX342_PQ99_.jpg',
+    affiliate_link: 'https://amzn.to/3Lj7JK8'
   },
   {
     id: '4',
     title: 'Start with Why',
     author: 'Simon Sinek',
-    cover_image_url: 'https://m.media-amazon.com/images/I/71PSoeC7oAI._SY466_.jpg',
-    affiliate_link: '#'
+    cover_image_url: 'https://m.media-amazon.com/images/I/71FPH6GnDgL._SY385_.jpg',
+    affiliate_link: 'https://amzn.to/4989V0g'
   },
   {
     id: '5',
-    title: 'The Lean Startup',
-    author: 'Eric Ries',
-    cover_image_url: 'https://m.media-amazon.com/images/I/81-QB7nDh4L._SY466_.jpg',
-    affiliate_link: '#'
+    title: 'The Chimp Paradox',
+    author: 'Prof Steve Peters',
+    cover_image_url: 'https://m.media-amazon.com/images/I/81C18yb1jHL._SY425_.jpg',
+    affiliate_link: 'https://amzn.to/3Yojx0H'
   },
   {
     id: '6',
-    title: 'Zero to One',
-    author: 'Peter Thiel',
-    cover_image_url: 'https://m.media-amazon.com/images/I/71uAI28kJuL._SY466_.jpg',
-    affiliate_link: '#'
+    title: 'Good to Great',
+    author: 'Jim Collins',
+    cover_image_url: 'https://m.media-amazon.com/images/I/71LhjimPd8L._SY385_.jpg',
+    affiliate_link: 'https://amzn.to/4smMg3K'
   },
   {
     id: '7',
-    title: 'Good to Great',
-    author: 'Jim Collins',
-    cover_image_url: 'https://m.media-amazon.com/images/I/61YfNbrM-WL._SY466_.jpg',
-    affiliate_link: '#'
+    title: 'The Gifts of Imperfection',
+    author: 'Brené Brown',
+    cover_image_url: 'https://m.media-amazon.com/images/I/71M1xmVuhnL._SY425_.jpg',
+    affiliate_link: 'https://amzn.to/3YnFsoN'
   },
   {
     id: '8',
     title: 'Dare to Lead',
     author: 'Brené Brown',
-    cover_image_url: 'https://m.media-amazon.com/images/I/71sCsN9F2kL._SY466_.jpg',
-    affiliate_link: '#'
+    cover_image_url: 'https://m.media-amazon.com/images/I/71LuaXKsHAL._SY425_.jpg',
+    affiliate_link: 'https://amzn.to/4jszX1Z'
+  }
+  {
+    id: '9',
+    title: 'The Almanack Of Naval Ravikant',
+    author: 'Eric Jorgenson',
+    cover_image_url: 'https://m.media-amazon.com/images/I/515M4WOE73L._SY466_.jpg',
+    affiliate_link: 'https://amzn.to/4bor33c'
+  }
+{
+    id: '10',
+    title: 'Nudge',
+    author: 'Richard H. Thaler Cass R Sunstein',
+    cover_image_url: 'https://m.media-amazon.com/images/I/71FlmujR6vL._SY385_.jpg',
+    affiliate_link: 'https://amzn.to/3YqEyrF'
+  }
+{
+    id: '11',
+    title: 'Man's Search For Meaning',
+    author: 'Viktor E Frankl',
+    cover_image_url: 'https://m.media-amazon.com/images/I/81FDXdnrh7L._SY425_.jpg',
+    affiliate_link: 'https://amzn.to/49hr1Yj'
+  }
+{
+    id: '12',
+    title: 'Think Like a Monk',
+    author: 'Jay Shetty',
+    cover_image_url: 'https://m.media-amazon.com/images/I/81fCvIBRpmL._SY385_.jpg',
+    affiliate_link: 'https://amzn.to/4qb7HDq'
   }
 ];
 
