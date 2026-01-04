@@ -77,7 +77,7 @@ const BOOKS_DATA = [
   },
 {
     id: '11',
-    title: 'Man's Search For Meaning',
+    title: "Man's Search For Meaning",
     author: 'Viktor E Frankl',
     cover_image_url: 'https://m.media-amazon.com/images/I/81FDXdnrh7L._SY425_.jpg',
     affiliate_link: 'https://amzn.to/49hr1Yj'
