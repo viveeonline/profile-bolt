@@ -1,4 +1,4 @@
-import { Award, Users, TrendingUp, Sparkles, Target, Brain, Globe } from 'lucide-react';
+import { Award, Users, TrendingUp, Sparkles, Target, Globe } from 'lucide-react';
 
 export default function About() {
   
@@ -34,7 +34,7 @@ export default function About() {
     }
   ];
 
-  // THE 3 STRATEGIC PILLARS (Replaces the "Wall of Text")
+  // THE 3 STRATEGIC PILLARS
   const pillars = [
     {
       icon: Target,
@@ -42,8 +42,8 @@ export default function About() {
       description: "Designing scalable academies and cohort-based programs that align learning with business goals at enterprise scale."
     },
     {
-      icon: Sparkles,
-      title: "AI Champion",
+      icon: Sparkles, // UPDATED: Consistent AI Icon
+      title: "AI Transformation",
       description: "Championing AI adoption through data-driven learning methodologies and personalized development pathways."
     },
     {
@@ -64,7 +64,7 @@ export default function About() {
           </h2>
           <div className="w-24 h-1 bg-blue-600 mx-auto mb-8 rounded-full"></div>
           
-          {/* THE HOOK (Short Executive Summary) */}
+          {/* THE HOOK */}
           <p className="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
             Accomplished Learning & Leadership Development Executive with <span className="font-bold text-blue-700">23+ years of global experience</span> transforming organizations through strategic initiatives and AI-enabled development.
           </p>
