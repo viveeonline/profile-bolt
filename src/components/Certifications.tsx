@@ -27,7 +27,6 @@ export default function Certifications() {
   ];
 
   // TIER 2: Small Cards (Specialist Skills)
-  // ORDER: Top Row = Leading L&D, Agile, PPA. Bottom Row = Rest.
   const otherCerts = [
     // Row 1
     { title: "Leading L&D", issuer: "Josh Bersin Academy" },
@@ -53,7 +52,7 @@ export default function Certifications() {
         </div>
 
         {/* TIER 1: BIG CARDS (2 Columns) */}
-        <div className="grid md:grid-cols-2 gap-8 mb-8 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 mb-12 max-w-5xl mx-auto">
           {featuredCerts.map((cert, index) => (
             <div 
               key={index}
@@ -81,27 +80,28 @@ export default function Certifications() {
         </div>
 
         {/* TIER 2: SMALL CARDS (3 Columns) */}
-        {/* max-w-5xl matches the width of the grid above for perfect alignment */}
-        <div className="max-w-5xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {otherCerts.map((cert, index) => (
-            <div 
-              key={index}
-              className="bg-white rounded-xl p-5 border border-slate-100 flex items-start gap-3 hover:shadow-md transition-all duration-200"
-            >
-              <div className="flex-shrink-0 mt-0.5">
-                {/* Reverted to Green Check Circle as requested */}
-                <CheckCircle2 className="w-5 h-5 text-green-500" />
+        {/* ADDED CONTAINER: bg-slate-50/50 rounded-3xl border border-slate-100 */}
+        <div className="max-w-5xl mx-auto bg-slate-50/50 rounded-3xl p-8 border border-slate-100">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {otherCerts.map((cert, index) => (
+              <div 
+                key={index}
+                className="bg-white rounded-xl p-5 border border-slate-100 flex items-start gap-3 hover:shadow-md transition-all duration-200"
+              >
+                <div className="flex-shrink-0 mt-0.5">
+                  <CheckCircle2 className="w-5 h-5 text-green-500" />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-slate-800 text-sm leading-snug">
+                    {cert.title}
+                  </h4>
+                  <p className="text-xs text-slate-500 mt-1 font-medium">
+                    {cert.issuer}
+                  </p>
+                </div>
               </div>
-              <div>
-                <h4 className="font-semibold text-slate-800 text-sm leading-snug">
-                  {cert.title}
-                </h4>
-                <p className="text-xs text-slate-500 mt-1 font-medium">
-                  {cert.issuer}
-                </p>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
       </div>
