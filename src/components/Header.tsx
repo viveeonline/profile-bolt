@@ -1,103 +1,66 @@
-import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Github, Linkedin, Mail } from 'lucide-react';
+import { useState } from 'react';
 
 export default function Header() {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
-    { href: '#about', label: 'About' },
-    { href: '#expertise', label: 'Expertise' },
-    { href: '#experience', label: 'Experience' },
-    { href: '#certifications', label: 'Certifications' },
-    { href: '#books', label: 'Books' },
-    { href: '#education', label: 'Education' },
-    { href: '#contact', label: 'Contact' }
+    { name: 'About', href: '#about' },
+    { name: 'Expertise', href: '#expertise' },
+    { name: 'Experience', href: '#experience' },
+    { name: 'Certifications', href: '#certifications' },
+    { name: 'Books', href: '#books' },
+    { name: 'Education', href: '#education' },
+    { name: 'Contact', href: '#contact' },
   ];
 
-  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
-    const element = document.querySelector(href);
-    if (element) {
-      const offset = 80;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-      setIsMobileMenuOpen(false);
-    }
-  };
-
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-white shadow-lg py-4'
-          : 'bg-transparent py-6'
-      }`}
-    >
+    // UPDATED: Added 'bg-slate-950 shadow-md' to create the solid color separation you asked for
+    <header className="fixed w-full z-50 bg-slate-950 shadow-md border-b border-slate-800/50">
       <div className="container mx-auto px-6 lg:px-12">
-        <div className="flex items-center justify-between">
-          <a
-            href="#"
-            className={`text-2xl font-bold transition-colors ${
-              isScrolled ? 'text-slate-900' : 'text-white'
-            }`}
-          >
+        <div className="flex justify-between items-center h-20">
+          <a href="#" className="text-2xl font-bold text-white tracking-tight">
             VK
           </a>
 
+          {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
               <a
-                key={link.href}
+                key={link.name}
                 href={link.href}
-                onClick={(e) => scrollToSection(e, link.href)}
-                className={`font-medium transition-colors hover:text-blue-600 ${
-                  isScrolled ? 'text-slate-700' : 'text-white'
-                }`}
+                className="text-sm font-medium text-slate-300 hover:text-white transition-colors"
               >
-                {link.label}
+                {link.name}
               </a>
             ))}
           </nav>
 
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className={`lg:hidden p-2 ${
-              isScrolled ? 'text-slate-900' : 'text-white'
-            }`}
+          {/* Mobile Menu Button */}
+          <button 
+            className="lg:hidden text-white"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isMenuOpen ? <X /> : <Menu />}
           </button>
         </div>
 
-        {isMobileMenuOpen && (
-          <nav className="lg:hidden mt-6 pt-6 border-t border-slate-200">
-            <div className="flex flex-col gap-4">
+        {/* Mobile Navigation */}
+        {isMenuOpen && (
+          <div className="lg:hidden py-4 border-t border-slate-800">
+            <nav className="flex flex-col gap-4">
               {navLinks.map((link) => (
                 <a
-                  key={link.href}
+                  key={link.name}
                   href={link.href}
-                  onClick={(e) => scrollToSection(e, link.href)}
-                  className="text-slate-700 font-medium hover:text-blue-600 transition-colors py-2"
+                  className="text-slate-300 hover:text-white transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
                 >
-                  {link.label}
+                  {link.name}
                 </a>
               ))}
-            </div>
-          </nav>
+            </nav>
+          </div>
         )}
       </div>
     </header>
