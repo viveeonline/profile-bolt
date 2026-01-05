@@ -9,6 +9,7 @@ import Education from './components/Education';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Books from './components/Books';
+import Recognition from './components/Recognition';
 
 function App() {
   useEffect(() => {
@@ -53,6 +54,7 @@ function App() {
         <Experience />
         <Certifications />
         <Books />
+        <Recognition />
         <Education />
         <Contact />
       </main>
