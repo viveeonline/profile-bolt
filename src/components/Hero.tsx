@@ -3,63 +3,70 @@ import profileImg from './vkprofile.png';
 
 export default function Hero() {
   return (
-    <section className="relative bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 text-white py-20 lg:py-32">
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNiIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utb3BhY2l0eT0iLjA1IiBzdHJva2Utd2lkdGg9IjIiLz48L2c+PC9zdmc+')] opacity-20"></div>
-
-      <div className="container mx-auto px-6 lg:px-12 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
-          <div className="flex-shrink-0">
-            <div className="w-48 h-48 lg:w-64 lg:h-64 rounded-full overflow-hidden border-4 border-blue-400 shadow-2xl bg-slate-700">
-              <img 
-                src={profileImg}
-                alt="Vivekananda Kadukuntla - Learning & Leadership Development Leader"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-
+    <section className="relative bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white min-h-[90vh] flex items-center">
+      {/* Background Texture Overlay (Optional, keeps it subtle) */}
+      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')] opacity-20"></div>
+      
+      <div className="container mx-auto px-6 lg:px-12 relative z-10 py-12 lg:py-0">
+        <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-12 lg:gap-20">
+          
+          {/* LEFT COLUMN: Text Content */}
           <div className="flex-1 text-center lg:text-left">
-            <h1 className="text-4xl lg:text-6xl font-bold mb-4 leading-tight">
+            <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
               Vivekananda Kadukuntla
             </h1>
-            <p className="text-xl lg:text-2xl text-blue-200 mb-6 font-light">
+            <p className="text-xl lg:text-2xl text-blue-200 mb-8 font-light">
               Global Learning & Leadership Development Leader
             </p>
-            <p className="text-lg text-slate-300 mb-8 max-w-3xl leading-relaxed">
-              Transforming organizations through strategic learning initiatives and AI-enabled development.
+            
+            <p className="text-lg text-slate-300 mb-10 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+              Transforming organizations through strategic learning initiatives and AI-enabled development. 
               23+ years of global experience building high-performing teams and leadership academies.
             </p>
 
-            <div className="flex flex-wrap gap-4 justify-center lg:justify-start mb-8">
+            {/* Action Buttons */}
+            <div className="flex flex-wrap gap-4 justify-center lg:justify-start mb-12">
               <a
                 href="https://www.linkedin.com/in/vivekanandakadukuntla/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+                className="flex items-center gap-3 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg shadow-blue-900/50"
               >
                 <Linkedin className="w-5 h-5 fill-current" />
                 <span>LinkedIn Profile</span>
               </a>
+              
               <a
-                href="mailto:vivekananda.kadukuntla@gmail.com"
-                className="flex items-center gap-2 bg-slate-700 hover:bg-slate-600 px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+                href="#contact"
+                className="flex items-center gap-3 bg-slate-800 hover:bg-slate-700 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 border border-slate-700"
               >
                 <Mail className="w-5 h-5" />
                 <span>Contact Me</span>
               </a>
             </div>
 
-            <div className="flex flex-wrap gap-6 text-sm text-slate-300 justify-center lg:justify-start">
-{/*              <div className="flex items-center gap-2">
-                <Phone className="w-4 h-4" />
-                <span>+91 888-500-8000</span>
-              </div>
- */}             <div className="flex items-center gap-2">
-                <MapPin className="w-4 h-4" />
-                <span>Hyderabad, India</span>
-              </div>
+            {/* Location Tag */}
+            <div className="flex items-center justify-center lg:justify-start text-slate-400 text-sm font-medium">
+              <MapPin className="w-4 h-4 mr-2" />
+              <span>Hyderabad, India</span>
             </div>
           </div>
+
+          {/* RIGHT COLUMN: Profile Image */}
+          <div className="flex-shrink-0 relative group">
+            {/* Glowing effect behind image */}
+            <div className="absolute inset-0 bg-blue-500 rounded-full blur-3xl opacity-20 group-hover:opacity-30 transition-opacity duration-500"></div>
+            
+            {/* Image Container */}
+            <div className="w-64 h-64 lg:w-96 lg:h-96 rounded-full p-2 bg-gradient-to-b from-blue-500/20 to-transparent border border-blue-400/30 relative z-10">
+              <img
+                src={profileImg}
+                alt="Vivekananda Kadukuntla"
+                className="w-full h-full object-cover rounded-full shadow-2xl border-4 border-slate-800/50"
+              />
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
