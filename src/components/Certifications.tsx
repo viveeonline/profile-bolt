@@ -2,42 +2,39 @@ import { Award, CheckCircle2, BadgeCheck } from 'lucide-react';
 
 export default function Certifications() {
   
-  // TIER 1: The "Crown Jewels" (Featured Certifications)
-  // Displayed as Large Cards (2 per row)
+  // TIER 1: Big Cards (Crown Jewels)
   const featuredCerts = [
     {
       title: "Prosci® Certified Change Practitioner",
       issuer: "Prosci",
-      category: "Change Management",
-      logoUrl: null // Placeholder for now. Replace with: import prosciLogo from './prosci.png'
+      logoUrl: null 
     },
     {
       title: "Insights Discovery Practitioner",
       issuer: "Insights",
-      category: "Psychometric Assessment",
       logoUrl: null
     },
     {
       title: "PI (Predictive Index) Practitioner",
       issuer: "The Predictive Index",
-      category: "Psychometric Assessment",
       logoUrl: null
     },
     {
       title: "MBTI® Certified Practitioner",
       issuer: "The Myers-Briggs Company",
-      category: "Psychometric Assessment",
       logoUrl: null
     }
   ];
 
-  // TIER 2: Specialist Skills
-  // Displayed as Compact Cards (4 per row)
+  // TIER 2: Small Cards (Specialist Skills)
+  // ORDER: Top Row = Leading L&D, Agile, PPA. Bottom Row = Rest.
   const otherCerts = [
-    { title: "SAP SuccessFactors Learning Expert (SFX)", issuer: "SAP" },
-    { title: "Certified PPA Practitioner", issuer: "Thomas Assessments" },
+    // Row 1
     { title: "Leading L&D", issuer: "Josh Bersin Academy" },
     { title: "The Agile Learning Organization", issuer: "Josh Bersin Academy" },
+    { title: "Certified PPA Practitioner", issuer: "Thomas Assessments" },
+    // Row 2
+    { title: "SAP SuccessFactors Learning Expert (SFX)", issuer: "SAP" },
     { title: "ITIL V3 Foundation", issuer: "EXIN" },
     { title: "Certified Trainer and Facilitator", issuer: "Internal" }
   ];
@@ -55,15 +52,13 @@ export default function Certifications() {
           </p>
         </div>
 
-        {/* SECTION 1: FEATURED CERTIFICATIONS (2 Cols) */}
-        <div className="grid md:grid-cols-2 gap-8 mb-12 max-w-5xl mx-auto">
+        {/* TIER 1: BIG CARDS (2 Columns) */}
+        <div className="grid md:grid-cols-2 gap-8 mb-8 max-w-5xl mx-auto">
           {featuredCerts.map((cert, index) => (
             <div 
               key={index}
-              // MATCHING THE "POP" STYLE from Experience/Education
               className="bg-white rounded-xl p-8 border border-slate-200 shadow-md transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl flex items-center gap-6"
             >
-              {/* Logo Placeholder - Large */}
               <div className="w-16 h-16 bg-blue-50 rounded-xl flex items-center justify-center flex-shrink-0 border border-blue-100">
                 {cert.logoUrl ? (
                   <img src={cert.logoUrl} alt={cert.issuer} className="w-10 h-10 object-contain" />
@@ -85,32 +80,28 @@ export default function Certifications() {
           ))}
         </div>
 
-        {/* SECTION 2: OTHER CREDENTIALS (4 Cols) */}
-        <div className="max-w-6xl mx-auto">
-          <h3 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-6 text-center">
-            Additional Technical & Professional Credentials
-          </h3>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {otherCerts.map((cert, index) => (
-              <div 
-                key={index}
-                className="bg-slate-50 rounded-lg p-4 border border-slate-100 flex items-center gap-3 hover:bg-white hover:shadow-md transition-all duration-200"
-              >
-                <div className="flex-shrink-0">
-                  <CheckCircle2 className="w-5 h-5 text-blue-500/70" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-slate-800 text-sm leading-snug">
-                    {cert.title}
-                  </h4>
-                  <p className="text-xs text-slate-500 mt-0.5">
-                    {cert.issuer}
-                  </p>
-                </div>
+        {/* TIER 2: SMALL CARDS (3 Columns) */}
+        {/* max-w-5xl matches the width of the grid above for perfect alignment */}
+        <div className="max-w-5xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {otherCerts.map((cert, index) => (
+            <div 
+              key={index}
+              className="bg-white rounded-xl p-5 border border-slate-100 flex items-start gap-3 hover:shadow-md transition-all duration-200"
+            >
+              <div className="flex-shrink-0 mt-0.5">
+                {/* Reverted to Green Check Circle as requested */}
+                <CheckCircle2 className="w-5 h-5 text-green-500" />
               </div>
-            ))}
-          </div>
+              <div>
+                <h4 className="font-semibold text-slate-800 text-sm leading-snug">
+                  {cert.title}
+                </h4>
+                <p className="text-xs text-slate-500 mt-1 font-medium">
+                  {cert.issuer}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
 
       </div>
