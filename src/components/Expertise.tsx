@@ -1,4 +1,4 @@
-import { Brain, Users, Rocket, LineChart, Lightbulb, Target } from 'lucide-react';
+import { Brain, Users, Rocket, LineChart, Lightbulb, Target, Sparkles } from 'lucide-react';
 
 export default function Expertise() {
   const expertiseAreas = [
