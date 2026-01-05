@@ -1,5 +1,6 @@
 import { Linkedin, Mail, MapPin } from 'lucide-react';
 import profileImg from './vkprofile.png';
+
 // Import local logos
 import pegaLogo from './pegalogo.png';
 import prosciLogo from './proscilogo.png';
@@ -8,14 +9,15 @@ import piLogo from './pilogo.jpeg';
 import mbtiLogo from './mbtilogo.gif';
 import ngaLogo from './ngalogo.png';
 import prolificsLogo from './prolificslogo.png';
+import isbLogo from './isblogo.png'; // <--- UPDATED ISB LOGO
 
 export default function Hero() {
 
-  // AGGREGATED LOGO LIST (Companies + Certs + Recognition)
-  const logos = [
+  // BASE LOGO LIST
+  const baseLogos = [
     { name: "Pegasystems", src: pegaLogo },
     { name: "Coursera", src: "https://upload.wikimedia.org/wikipedia/commons/9/97/Coursera-Logo_600x600.svg" },
-    { name: "ISB", src: "https://upload.wikimedia.org/wikipedia/en/thumb/8/85/Indian_School_of_Business_logo.svg/1200px-Indian_School_of_Business_logo.svg.png" },
+    { name: "ISB", src: isbLogo },
     { name: "Prosci", src: prosciLogo },
     { name: "ISTD", src: "https://www.istd.co.in/images/logo.png" },
     { name: "Insights", src: insightsLogo },
@@ -23,8 +25,11 @@ export default function Hero() {
     { name: "MBTI", src: mbtiLogo },
     { name: "NGA HR", src: ngaLogo },
     { name: "Prolifics", src: prolificsLogo },
-    { name: "SAP", src: "https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg" }, // Added SAP
+    { name: "SAP", src: "https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg" },
   ];
+
+  // DUPLICATE 4 TIMES for smooth infinite scroll on big screens
+  const tickerLogos = [...baseLogos, ...baseLogos, ...baseLogos, ...baseLogos];
 
   return (
     <section className="relative bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white min-h-screen flex flex-col justify-between overflow-hidden">
@@ -88,7 +93,7 @@ export default function Hero() {
       </div>
 
       {/* ========================================================= */}
-      {/* 🚀 NEW: FLOATING LOGO SHELF (Inside Hero) */}
+      {/* 🚀 FLOATING LOGO SHELF */}
       {/* ========================================================= */}
       <div className="relative w-full py-10 mt-12 overflow-hidden border-t border-white/10 bg-slate-900/50 backdrop-blur-sm">
         
@@ -97,10 +102,10 @@ export default function Hero() {
         <div className="absolute top-0 bottom-0 right-0 w-32 z-10 bg-gradient-to-l from-slate-900 to-transparent"></div>
 
         {/* INFINITE SCROLL TRACK */}
-        <div className="flex animate-scroll whitespace-nowrap">
-          {/* Render the list TWICE to create the infinite loop effect */}
-          {[...logos, ...logos].map((logo, index) => (
-            <div key={index} className="mx-4 flex-shrink-0">
+        {/* We use inline-block to allow the width to be calculated naturally */}
+        <div className="flex animate-scroll whitespace-nowrap w-max">
+          {tickerLogos.map((logo, index) => (
+            <div key={index} className="mx-4 inline-block">
               {/* WHITE CARD STYLE */}
               <div className="w-32 h-20 bg-white rounded-xl shadow-lg flex items-center justify-center p-4 hover:scale-105 transition-transform duration-300">
                 <img 
