@@ -2,7 +2,7 @@ import { Award, CheckCircle2, BadgeCheck } from 'lucide-react';
 
 export default function Certifications() {
   
-  // TIER 1: Big Cards (Crown Jewels)
+  // TIER 1: Big Cards
   const featuredCerts = [
     {
       title: "Prosci® Certified Change Practitioner",
@@ -26,13 +26,11 @@ export default function Certifications() {
     }
   ];
 
-  // TIER 2: Small Cards (Specialist Skills)
+  // TIER 2: Small Cards
   const otherCerts = [
-    // Row 1
     { title: "Leading L&D", issuer: "Josh Bersin Academy" },
     { title: "The Agile Learning Organization", issuer: "Josh Bersin Academy" },
     { title: "Certified PPA Practitioner", issuer: "Thomas Assessments" },
-    // Row 2
     { title: "SAP SuccessFactors Learning Expert (SFX)", issuer: "SAP" },
     { title: "ITIL V3 Foundation", issuer: "EXIN" },
     { title: "Certified Trainer and Facilitator", issuer: "Internal" }
@@ -51,37 +49,42 @@ export default function Certifications() {
           </p>
         </div>
 
-        {/* TIER 1: BIG CARDS (2 Columns) */}
-        <div className="grid md:grid-cols-2 gap-8 mb-12 max-w-5xl mx-auto">
-          {featuredCerts.map((cert, index) => (
-            <div 
-              key={index}
-              className="bg-white rounded-xl p-8 border border-slate-200 shadow-md transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl flex items-center gap-6"
-            >
-              <div className="w-16 h-16 bg-blue-50 rounded-xl flex items-center justify-center flex-shrink-0 border border-blue-100">
-                {cert.logoUrl ? (
-                  <img src={cert.logoUrl} alt={cert.issuer} className="w-10 h-10 object-contain" />
-                ) : (
-                  <Award className="w-8 h-8 text-blue-600" />
-                )}
-              </div>
+        {/* UNIFIED CONTAINER: Both tiers live inside this single box now */}
+        <div className="max-w-6xl mx-auto bg-slate-50/50 rounded-3xl p-8 lg:p-12 border border-slate-100">
+          
+          {/* TIER 1: BIG CARDS (2 Columns) */}
+          <div className="grid md:grid-cols-2 gap-8 mb-8">
+            {featuredCerts.map((cert, index) => (
+              <div 
+                key={index}
+                className="bg-white rounded-xl p-8 border border-slate-200 shadow-md transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl flex items-center gap-6"
+              >
+                <div className="w-16 h-16 bg-blue-50 rounded-xl flex items-center justify-center flex-shrink-0 border border-blue-100">
+                  {cert.logoUrl ? (
+                    <img src={cert.logoUrl} alt={cert.issuer} className="w-10 h-10 object-contain" />
+                  ) : (
+                    <Award className="w-8 h-8 text-blue-600" />
+                  )}
+                </div>
 
-              <div>
-                <h3 className="text-xl font-bold text-slate-900 leading-tight mb-2">
-                  {cert.title}
-                </h3>
-                <div className="flex items-center gap-2 text-slate-600 text-sm font-medium">
-                  <BadgeCheck className="w-4 h-4 text-blue-500" />
-                  <span>{cert.issuer}</span>
+                <div>
+                  <h3 className="text-xl font-bold text-slate-900 leading-tight mb-2">
+                    {cert.title}
+                  </h3>
+                  <div className="flex items-center gap-2 text-slate-600 text-sm font-medium">
+                    {/* CHANGED TO GREEN CHECK to match the small cards */}
+                    <BadgeCheck className="w-4 h-4 text-green-500" />
+                    <span>{cert.issuer}</span>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
 
-        {/* TIER 2: SMALL CARDS (3 Columns) */}
-        {/* ADDED CONTAINER: bg-slate-50/50 rounded-3xl border border-slate-100 */}
-        <div className="max-w-5xl mx-auto bg-slate-50/50 rounded-3xl p-8 border border-slate-100">
+          {/* DIVIDER LINE (Optional but helps separation) */}
+          <div className="w-full h-px bg-slate-200 mb-8 opacity-50"></div>
+
+          {/* TIER 2: SMALL CARDS (3 Columns) */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {otherCerts.map((cert, index) => (
               <div 
@@ -102,6 +105,7 @@ export default function Certifications() {
               </div>
             ))}
           </div>
+        
         </div>
 
       </div>
