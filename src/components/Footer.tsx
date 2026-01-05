@@ -9,6 +9,7 @@ export default function Footer() {
     { name: 'Experience', href: '#experience' },
     { name: 'Certifications', href: '#certifications' },
     { name: 'Books', href: '#books' },
+    { name: 'Recognition', href: '#recognition' },
     { name: 'Education', href: '#education' },
     { name: 'Contact', href: '#contact' },
   ];
