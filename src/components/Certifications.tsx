@@ -7,22 +7,26 @@ export default function Certifications() {
     {
       title: "Prosci® Certified Change Practitioner",
       issuer: "Prosci",
-      logoUrl: null 
+      // Official Prosci Logo
+      logoUrl: "https://www.prosci.com/hubfs/Prosci_Logo_2022.svg" 
     },
     {
       title: "Insights Discovery Practitioner",
       issuer: "Insights",
-      logoUrl: null
+      // Official Insights Logo
+      logoUrl: "https://www.insights.com/media/1085/insights_logo_strapline_rgb.png"
     },
     {
       title: "PI (Predictive Index) Practitioner",
       issuer: "The Predictive Index",
-      logoUrl: null
+      // Official PI Logo
+      logoUrl: "https://upload.wikimedia.org/wikipedia/commons/e/e6/The_Predictive_Index_Logo.jpg"
     },
     {
       title: "MBTI® Certified Practitioner",
       issuer: "The Myers-Briggs Company",
-      logoUrl: null
+      // Official Myers-Briggs Logo
+      logoUrl: "https://d39w7f4ix9f5s9.cloudfront.net/dims4/default/67c0062/2147483647/strip/true/crop/1382x666+0+0/resize/1382x666!/quality/90/?url=http%3A%2F%2Famazon-skills-brightspot.s3.amazonaws.com%2Ff5%2F30%2F6160352d43108c9629b3f46f481c%2Fthe-myers-briggs-company-logo-blue-and-black.png"
     }
   ];
 
@@ -59,9 +63,14 @@ export default function Certifications() {
                 key={index}
                 className="bg-white rounded-xl p-8 border border-slate-200 shadow-md transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl flex items-center gap-6"
               >
-                <div className="w-16 h-16 bg-blue-50 rounded-xl flex items-center justify-center flex-shrink-0 border border-blue-100">
+                {/* Logo Container: Added 'p-1' and 'bg-white' to handle transparent logos better */}
+                <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center flex-shrink-0 border border-slate-100 shadow-sm p-1 overflow-hidden">
                   {cert.logoUrl ? (
-                    <img src={cert.logoUrl} alt={cert.issuer} className="w-10 h-10 object-contain" />
+                    <img 
+                      src={cert.logoUrl} 
+                      alt={cert.issuer} 
+                      className="w-full h-full object-contain" 
+                    />
                   ) : (
                     <Award className="w-8 h-8 text-blue-600" />
                   )}
@@ -88,7 +97,6 @@ export default function Certifications() {
             {otherCerts.map((cert, index) => (
               <div 
                 key={index}
-                // FIXED: Changed shadow-sm to shadow-md to match Big Cards perfectly
                 className="bg-white rounded-xl p-5 border border-slate-200 shadow-md flex items-start gap-3 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg"
               >
                 <div className="flex-shrink-0 mt-0.5">
