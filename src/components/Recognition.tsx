@@ -18,48 +18,48 @@ const RECOGNITION_DATA = [
     category: 'Award',
     categoryColor: 'bg-amber-100 text-amber-800 border-amber-200', // 🏆 Gold for Awards
     icon: Trophy,
-    title: 'National Award for Leadership Excellence',
+    title: 'L&D Excellence in Developing Leaders of Tomorrow',
     organization: 'ISTD Hyderabad Chapter',
-    description: 'Honored with the prestigious award for "Innovative Training Practices," recognizing excellence in strategic L&D frameworks.',
+    description: 'Honored with the prestigious award for the impactful efforts in nurturing future leaders through innovative learning strategies, mentorship, and a strong focus on continuous development',
     imageUrl: istdAwardImg,
     link: 'https://www.linkedin.com/posts/indian-society-for-training-and-development-istd-hyderabad-chapter-80a7331bb_we-are-delighted-to-announce-that-pegasystems-activity-7327877671919517696-L0EB/',
-    date: '2024'
-  },
-  {
-    id: '2',
-    category: 'Feature',
-    categoryColor: 'bg-blue-100 text-blue-800 border-blue-200', // 📄 Blue for Reports
-    icon: FileText,
-    title: 'Industry Skills Brief 2025',
-    organization: 'Coursera',
-    description: 'Featured thought leader in the Global Industry Skills Brief, discussing the "Quality vs. Speed" dilemma in GenAI adoption.',
-    imageUrl: courseraFeatureImg,
-    link: 'https://www.coursera.org/enterprise/resources/pdf/industry-skills-brief-pdf',
     date: '2025'
   },
   {
-    id: '3',
+    id: '2',
     category: 'Case Study',
     categoryColor: 'bg-indigo-100 text-indigo-800 border-indigo-200', // 📘 Indigo for Case Studies
     icon: Newspaper,
     title: 'Pegasystems Success Story',
-    organization: 'Coursera for Enterprise',
-    description: 'Official case study showcasing how we enhanced skills development and drove digital transformation at Pega.',
+    organization: 'Coursera',
+    description: 'Official case study showcasing enhanced skills development and digital transformation at Pega through continuous learning culture.',
     imageUrl: courseraCaseStudyImg,
     link: 'https://www.coursera.org/enterprise/resources/casestudy/pegasystems',
     date: '2024'
   },
   {
-    id: '4',
+    id: '3',
     category: 'Speaker',
     categoryColor: 'bg-red-100 text-red-800 border-red-200', // 🎙️ Red for Speaking
     icon: Mic,
     title: 'HRAI Thought Leadership Series',
     organization: 'Human Resources Association India',
-    description: 'Curated and moderated a series of expert panels on "The Future of Remote Work" and "Hybrid Teams."',
+    description: 'Curated and moderated a series of expert panels covering key topics like Talent, AI and HR - featuring Vivekananda Kadukuntla as moderator/ speaker',
     imageUrl: hraiThumbnail,
     link: 'https://youtube.com/playlist?list=PLIcHPHfV18lGU3LDqNXlGwsax5U_NMUlp&si=Rd8GbE_gi_byFS-3',
     date: '2023 - Present'
+  },
+  {
+    id: '4',
+    category: 'Feature',
+    categoryColor: 'bg-blue-100 text-blue-800 border-blue-200', // 📄 Blue for Reports
+    icon: FileText,
+    title: 'Industry Skills Brief 2025',
+    organization: 'Coursera',
+    description: 'Featured thought leader in the Global Industry Skills Brief, discussing the importance og human skills alongside the technological advancement.',
+    imageUrl: courseraFeatureImg,
+    link: 'https://www.coursera.org/enterprise/resources/pdf/industry-skills-brief-pdf',
+    date: '2025'
   }
 ];
 
