@@ -43,7 +43,7 @@ export default function About() {
     },
     {
       icon: Brain,
-      title: "AI Transformation",
+      title: "Sparkles",
       description: "Championing AI adoption through data-driven learning methodologies and personalized development pathways."
     },
     {
