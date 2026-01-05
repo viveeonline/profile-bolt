@@ -10,6 +10,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Books from './components/Books';
 import Recognition from './components/Recognition';
+import LogoTicker from './components/LogoTicker';
 
 function App() {
   useEffect(() => {
@@ -50,6 +51,7 @@ function App() {
       <main>
         <Hero />
         <About />
+        <LogoTicker />
         <Expertise />
         <Experience />
         <Certifications />
