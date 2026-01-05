@@ -3,7 +3,7 @@ import { Brain, Users, Rocket, LineChart, Lightbulb, Target } from 'lucide-react
 export default function Expertise() {
   const expertiseAreas = [
     {
-      icon: Brain,
+      icon: Users,
       title: "Leadership Development",
       description: "Design and implementation of leadership academies and cohort-based programs at enterprise scale"
     },
