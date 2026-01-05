@@ -79,7 +79,6 @@ export default function Experience() {
                     ></div>
 
                     {/* LOGO CIRCLE */}
-                    {/* Added 'hover:scale-110' transition to logo too for extra polish */}
                     <div className="relative z-10 w-28 h-28 bg-white rounded-full shadow-md border border-slate-200 flex items-center justify-center p-5 transition-transform duration-300 hover:scale-105">
                       <img
                         src={exp.logo}
@@ -92,39 +91,25 @@ export default function Experience() {
                   {/* RIGHT COLUMN: Content Card */}
                   <div className="flex-1">
                     {/* 
-                       UPDATED CARD STYLE TO MATCH EXPERTISE "POP" EFFECT:
-                       1. bg-white: Clean background for light theme
-                       2. rounded-xl: Matches Expertise border radius
-                       3. shadow-md: Base shadow
-                       4. border border-slate-200: Subtle definition
-                       5. hover:shadow-2xl: The deep shadow on hover (Same as Expertise)
-                       6. transform hover:-translate-y-2: The movement (Same as Expertise)
-                       7. transition-all duration-300: Smooth animation
+                       POP-UP CARD STYLE:
+                       - Stacks elements vertically (flex-col)
+                       - Includes hover:shadow-2xl and hover:-translate-y-2
                     */}
                     <div className="bg-white rounded-xl p-8 border border-slate-200 shadow-md transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl">
-                      <div className="flex flex-col items-start gap-2">
+                      <div className="flex flex-col items-start gap-3">
                         
-                        <div className="w-full flex justify-between items-start">
-                          <div>
-                            {/* Company Name */}
-                            <h3 className="text-xl font-bold text-slate-900">
-                              {exp.company}
-                            </h3>
-                            {/* Role */}
-                            <p className="text-slate-600 font-medium text-lg mt-1">
-                              {exp.role}
-                            </p>
-                          </div>
-                          
-                          {/* Date Pill - Kept rounded-full (Pill shape) as requested */}
-                          <div className="hidden md:flex items-center gap-2 bg-slate-100 text-slate-600 px-4 py-1.5 rounded-full text-sm font-medium whitespace-nowrap">
-                            <Calendar className="w-4 h-4 text-slate-500" />
-                            <span>{exp.period}</span>
-                          </div>
-                        </div>
+                        {/* 1. Company Name */}
+                        <h3 className="text-xl font-bold text-slate-900">
+                          {exp.company}
+                        </h3>
 
-                        {/* Mobile Date (Shows below text on small screens) */}
-                        <div className="md:hidden flex items-center gap-2 bg-slate-100 text-slate-600 px-3 py-1 rounded-full text-sm font-medium w-fit mt-2">
+                        {/* 2. Role */}
+                        <p className="text-slate-600 font-medium text-lg">
+                          {exp.role}
+                        </p>
+                        
+                        {/* 3. Date Pill (Left Aligned) */}
+                        <div className="flex items-center gap-2 bg-slate-100 text-slate-600 px-4 py-1.5 rounded-full text-sm font-medium w-fit mt-1">
                           <Calendar className="w-4 h-4 text-slate-500" />
                           <span>{exp.period}</span>
                         </div>
