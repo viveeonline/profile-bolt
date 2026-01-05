@@ -88,8 +88,8 @@ export default function Certifications() {
             {otherCerts.map((cert, index) => (
               <div 
                 key={index}
-                // UPDATED STYLE: Added shadow-sm, border-slate-200, and hover:-translate-y-1
-                className="bg-white rounded-xl p-5 border border-slate-200 shadow-sm flex items-start gap-3 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg"
+                // FIXED: Changed shadow-sm to shadow-md to match Big Cards perfectly
+                className="bg-white rounded-xl p-5 border border-slate-200 shadow-md flex items-start gap-3 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg"
               >
                 <div className="flex-shrink-0 mt-0.5">
                   <CheckCircle2 className="w-5 h-5 text-green-500" />
