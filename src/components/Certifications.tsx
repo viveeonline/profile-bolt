@@ -49,7 +49,7 @@ export default function Certifications() {
           </p>
         </div>
 
-        {/* UNIFIED CONTAINER: Both tiers live inside this single box now */}
+        {/* UNIFIED CONTAINER */}
         <div className="max-w-6xl mx-auto bg-slate-50/50 rounded-3xl p-8 lg:p-12 border border-slate-100">
           
           {/* TIER 1: BIG CARDS (2 Columns) */}
@@ -72,7 +72,6 @@ export default function Certifications() {
                     {cert.title}
                   </h3>
                   <div className="flex items-center gap-2 text-slate-600 text-sm font-medium">
-                    {/* CHANGED TO GREEN CHECK to match the small cards */}
                     <BadgeCheck className="w-4 h-4 text-green-500" />
                     <span>{cert.issuer}</span>
                   </div>
@@ -81,7 +80,7 @@ export default function Certifications() {
             ))}
           </div>
 
-          {/* DIVIDER LINE (Optional but helps separation) */}
+          {/* DIVIDER LINE */}
           <div className="w-full h-px bg-slate-200 mb-8 opacity-50"></div>
 
           {/* TIER 2: SMALL CARDS (3 Columns) */}
@@ -89,7 +88,8 @@ export default function Certifications() {
             {otherCerts.map((cert, index) => (
               <div 
                 key={index}
-                className="bg-white rounded-xl p-5 border border-slate-100 flex items-start gap-3 hover:shadow-md transition-all duration-200"
+                // UPDATED STYLE: Added shadow-sm, border-slate-200, and hover:-translate-y-1
+                className="bg-white rounded-xl p-5 border border-slate-200 shadow-sm flex items-start gap-3 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg"
               >
                 <div className="flex-shrink-0 mt-0.5">
                   <CheckCircle2 className="w-5 h-5 text-green-500" />
