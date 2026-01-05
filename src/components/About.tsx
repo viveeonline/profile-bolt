@@ -42,8 +42,8 @@ export default function About() {
       description: "Designing scalable academies and cohort-based programs that align learning with business goals at enterprise scale."
     },
     {
-      icon: Brain,
-      title: "Sparkles",
+      icon: Sparkles,
+      title: "AI Champion",
       description: "Championing AI adoption through data-driven learning methodologies and personalized development pathways."
     },
     {
