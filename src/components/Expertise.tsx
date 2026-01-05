@@ -8,7 +8,7 @@ export default function Expertise() {
       description: "Design and implementation of leadership academies and cohort-based programs at enterprise scale"
     },
     {
-      icon: Rocket,
+      icon: Sparkles,
       title: "AI-Enabled Learning",
       description: "Championing AI adoption through advanced technologies and data-driven learning methodologies"
     },
