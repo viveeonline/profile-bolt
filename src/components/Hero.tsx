@@ -1,7 +1,9 @@
 import { Linkedin, Mail, MapPin } from 'lucide-react';
 import profileImg from './vkprofile.png';
 
-// Import local logos
+// ==========================================
+// 1. LOCAL LOGO IMPORTS (Complete Set)
+// ==========================================
 import pegaLogo from './pegalogo.png';
 import prosciLogo from './proscilogo.png';
 import insightsLogo from './insightslogo.jpg';
@@ -9,26 +11,29 @@ import piLogo from './pilogo.jpeg';
 import mbtiLogo from './mbtilogo.gif';
 import ngaLogo from './ngalogo.png';
 import prolificsLogo from './prolificslogo.png';
-import isbLogo from './isblogo.png'; // <--- UPDATED ISB LOGO
+import isbLogo from './isblogo.png';
+import istdLogo from './istdlogo.png';       // NEW
+import courseraLogo from './courseralogo.png'; // NEW
+import sapLogo from './saplogo.jpg';           // NEW
 
 export default function Hero() {
 
   // BASE LOGO LIST
   const baseLogos = [
     { name: "Pegasystems", src: pegaLogo },
-    { name: "Coursera", src: "https://upload.wikimedia.org/wikipedia/commons/9/97/Coursera-Logo_600x600.svg" },
+    { name: "Coursera", src: courseraLogo },
     { name: "ISB", src: isbLogo },
     { name: "Prosci", src: prosciLogo },
-    { name: "ISTD", src: "https://www.istd.co.in/images/logo.png" },
+    { name: "ISTD", src: istdLogo },
     { name: "Insights", src: insightsLogo },
     { name: "Predictive Index", src: piLogo },
     { name: "MBTI", src: mbtiLogo },
     { name: "NGA HR", src: ngaLogo },
     { name: "Prolifics", src: prolificsLogo },
-    { name: "SAP", src: "https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg" },
+    { name: "SAP", src: sapLogo },
   ];
 
-  // DUPLICATE 4 TIMES for smooth infinite scroll on big screens
+  // DUPLICATE 4 TIMES for smooth infinite scroll
   const tickerLogos = [...baseLogos, ...baseLogos, ...baseLogos, ...baseLogos];
 
   return (
@@ -63,9 +68,11 @@ export default function Hero() {
                 <Linkedin className="w-5 h-5 fill-current" />
                 <span>LinkedIn Profile</span>
               </a>
+              
+              {/* UPDATED SECONDARY BUTTON: Glassmorphic Style */}
               <a
                 href="#contact"
-                className="flex items-center gap-3 bg-slate-800 hover:bg-slate-700 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 border border-slate-700"
+                className="flex items-center gap-3 bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 border border-white/20 backdrop-blur-sm"
               >
                 <Mail className="w-5 h-5" />
                 <span>Contact Me</span>
@@ -92,21 +99,14 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* ========================================================= */}
-      {/* 🚀 FLOATING LOGO SHELF */}
-      {/* ========================================================= */}
+      {/* FLOATING LOGO SHELF */}
       <div className="relative w-full py-10 mt-12 overflow-hidden border-t border-white/10 bg-slate-900/50 backdrop-blur-sm">
-        
-        {/* GRADIENT FADE MASKS */}
         <div className="absolute top-0 bottom-0 left-0 w-32 z-10 bg-gradient-to-r from-slate-900 to-transparent"></div>
         <div className="absolute top-0 bottom-0 right-0 w-32 z-10 bg-gradient-to-l from-slate-900 to-transparent"></div>
-
-        {/* INFINITE SCROLL TRACK */}
-        {/* We use inline-block to allow the width to be calculated naturally */}
+        
         <div className="flex animate-scroll whitespace-nowrap w-max">
           {tickerLogos.map((logo, index) => (
             <div key={index} className="mx-4 inline-block">
-              {/* WHITE CARD STYLE */}
               <div className="w-32 h-20 bg-white rounded-xl shadow-lg flex items-center justify-center p-4 hover:scale-105 transition-transform duration-300">
                 <img 
                   src={logo.src} 
