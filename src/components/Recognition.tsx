@@ -1,47 +1,66 @@
-import { ExternalLink, Trophy, Mic, Newspaper, ChevronLeft, ChevronRight, PlayCircle } from 'lucide-react';
+import { ExternalLink, Trophy, Mic, Newspaper, ChevronLeft, ChevronRight, FileText } from 'lucide-react';
 import { useRef } from 'react';
 
-// ==========================================
-// 🏆 UPDATE YOUR RECOGNITION ITEMS HERE
-// ==========================================
+// =========================================================================
+// 📸 IMAGE IMPORTS
+// Make sure these 3 files exist in your src/components/ folder!
+// =========================================================================
+import istdAwardImg from './istd-award.jpg';
+import courseraFeatureImg from './coursera-feature.png';
+import courseraCaseStudyImg from './coursera-casestudy.png';
+
+// For YouTube, we grab the high-res thumbnail directly from the video ID
+const hraiThumbnail = 'https://img.youtube.com/vi/Ei_dKy2taM8/maxresdefault.jpg'; 
+
 const RECOGNITION_DATA = [
   {
     id: '1',
     category: 'Award',
+    categoryColor: 'bg-amber-100 text-amber-800 border-amber-200', // 🏆 Gold for Awards
     icon: Trophy,
-    title: 'Leadership Development Excellence',
-    organization: 'ISTD (Indian Society for Training & Development)',
-    description: 'Honored with the prestigious national award for designing impactful leadership frameworks.',
-    // Replace with: import awardImg from './award.jpg'
-    imageUrl: 'https://images.unsplash.com/photo-1531545514256-b1400bc00f31?auto=format&fit=crop&q=80&w=800', 
-    link: '#', // Link to LinkedIn post or photo
-    date: '2023'
-  },
-  {
-    id: '2',
-    category: 'Speaker',
-    icon: Mic,
-    title: 'HRAI Webinar Series',
-    organization: 'Human Resources Association India',
-    description: 'Coordinated and moderated expert panels on "The Future of Remote Work" and "Hybrid Teams."',
-    // Replace with: YouTube Thumbnail or Webinar Poster
-    imageUrl: 'https://images.unsplash.com/photo-1544531696-297af82eb1ea?auto=format&fit=crop&q=80&w=800',
-    link: '#', // Link to YouTube video
+    title: 'National Award for Leadership Excellence',
+    organization: 'ISTD Hyderabad Chapter',
+    description: 'Honored with the prestigious award for "Innovative Training Practices," recognizing excellence in strategic L&D frameworks.',
+    imageUrl: istdAwardImg,
+    link: 'https://www.linkedin.com/posts/indian-society-for-training-and-development-istd-hyderabad-chapter-80a7331bb_we-are-delighted-to-announce-that-pegasystems-activity-7327877671919517696-L0EB/',
     date: '2024'
   },
   {
-    id: '3',
+    id: '2',
     category: 'Feature',
-    icon: Newspaper,
-    title: 'Coursera Global Skills Report',
+    categoryColor: 'bg-blue-100 text-blue-800 border-blue-200', // 📄 Blue for Reports
+    icon: FileText,
+    title: 'Industry Skills Brief 2025',
     organization: 'Coursera',
-    description: 'Featured thought leader: "Building a culture of continuous learning in the age of AI."',
-    // Replace with: Screenshot of the report cover or your quote
-    imageUrl: 'https://images.unsplash.com/photo-1555421689-d68471e189f2?auto=format&fit=crop&q=80&w=800',
-    link: '#', // Link to the report
-    date: '2023'
+    description: 'Featured thought leader in the Global Industry Skills Brief, discussing the "Quality vs. Speed" dilemma in GenAI adoption.',
+    imageUrl: courseraFeatureImg,
+    link: 'https://www.coursera.org/enterprise/resources/pdf/industry-skills-brief-pdf',
+    date: '2025'
   },
-  // Add more items here following the same pattern...
+  {
+    id: '3',
+    category: 'Case Study',
+    categoryColor: 'bg-indigo-100 text-indigo-800 border-indigo-200', // 📘 Indigo for Case Studies
+    icon: Newspaper,
+    title: 'Pegasystems Success Story',
+    organization: 'Coursera for Enterprise',
+    description: 'Official case study showcasing how we enhanced skills development and drove digital transformation at Pega.',
+    imageUrl: courseraCaseStudyImg,
+    link: 'https://www.coursera.org/enterprise/resources/casestudy/pegasystems',
+    date: '2024'
+  },
+  {
+    id: '4',
+    category: 'Speaker',
+    categoryColor: 'bg-red-100 text-red-800 border-red-200', // 🎙️ Red for Speaking
+    icon: Mic,
+    title: 'HRAI Thought Leadership Series',
+    organization: 'Human Resources Association India',
+    description: 'Curated and moderated a series of expert panels on "The Future of Remote Work" and "Hybrid Teams."',
+    imageUrl: hraiThumbnail,
+    link: 'https://youtube.com/playlist?list=PLIcHPHfV18lGU3LDqNXlGwsax5U_NMUlp&si=Rd8GbE_gi_byFS-3',
+    date: '2023 - Present'
+  }
 ];
 
 export default function Recognition() {
@@ -50,7 +69,7 @@ export default function Recognition() {
   const scroll = (direction: 'left' | 'right') => {
     if (scrollRef.current) {
       const { current } = scrollRef;
-      const scrollAmount = current.clientWidth; // Scroll one full screen width
+      const scrollAmount = current.clientWidth; 
       if (direction === 'left') {
         current.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
       } else {
@@ -74,7 +93,7 @@ export default function Recognition() {
 
         <div className="relative max-w-7xl mx-auto group/container">
           
-          {/* LEFT ARROW */}
+          {/* NAVIGATION BUTTONS */}
           <button 
             onClick={() => scroll('left')}
             className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-12 z-10 p-3 bg-white rounded-full shadow-lg border border-slate-200 text-slate-600 hover:text-blue-600 hover:border-blue-600 transition-all duration-300 hidden md:flex"
@@ -82,8 +101,6 @@ export default function Recognition() {
           >
             <ChevronLeft className="w-6 h-6" />
           </button>
-
-          {/* RIGHT ARROW */}
           <button 
             onClick={() => scroll('right')}
             className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-12 z-10 p-3 bg-white rounded-full shadow-lg border border-slate-200 text-slate-600 hover:text-blue-600 hover:border-blue-600 transition-all duration-300 hidden md:flex"
@@ -110,19 +127,18 @@ export default function Recognition() {
                     alt={item.title} 
                     className="w-full h-full object-cover"
                   />
-                  {/* Overlay on hover */}
                   <div className="absolute inset-0 bg-blue-900/0 group-hover:bg-blue-900/10 transition-all duration-300"></div>
                   
-                  {/* Category Badge */}
-                  <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-slate-800 flex items-center gap-1 shadow-sm">
-                    <item.icon className="w-3 h-3 text-blue-600" />
+                  {/* CATEGORY BADGE */}
+                  <div className={`absolute top-4 left-4 ${item.categoryColor} backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold border flex items-center gap-1 shadow-sm`}>
+                    <item.icon className="w-3 h-3" />
                     {item.category}
                   </div>
                 </div>
 
                 {/* CONTENT AREA */}
                 <div className="p-8 flex flex-col flex-1">
-                  <div className="mb-2 text-blue-600 text-sm font-semibold tracking-wide uppercase">
+                  <div className="mb-2 text-slate-500 text-xs font-bold tracking-wider uppercase">
                     {item.organization}
                   </div>
                   
