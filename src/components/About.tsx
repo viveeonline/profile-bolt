@@ -1,4 +1,4 @@
-import { Award, Users, TrendingUp, Sparkles, Target, Globe } from 'lucide-react';
+import { Award, Users, TrendingUp, Sparkles, Target, Globe, GraduationCap } from 'lucide-react';
 
 export default function About() {
   
@@ -19,7 +19,7 @@ export default function About() {
       bg: "bg-indigo-50"
     },
     { 
-      icon: TrendingUp, 
+      icon: GraduationCap, 
       value: "ISB Alumni", 
       label: "Future CHRO Program",
       color: "text-blue-600",
