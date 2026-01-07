@@ -51,9 +51,12 @@ export default function Header() {
         <div className="flex justify-between items-center h-20">
           
           {/* LOGO */}
-          <a href="#" className="text-2xl font-bold text-white tracking-tight">
-            VK
-          </a>
+        <a href="#" className="flex items-center gap-2 group">
+          {/* The Boxed Logo */}
+            <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center shadow-lg group-hover:bg-blue-700 transition-colors duration-300">
+              <span className="text-white font-bold text-xl tracking-tight">VK</span>
+            </div>
+        </a>
 
           {/* DESKTOP NAVIGATION */}
           <nav className="hidden xl:flex items-center gap-8">
