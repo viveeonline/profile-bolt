@@ -1,6 +1,6 @@
 import { Send, Handshake, ArrowRight, CheckCircle2, Linkedin, Mail } from 'lucide-react';
 import { useState } from 'react';
-import profileImg from './vkprofile.png'; // Importing your profile pic
+import profileImg from './vkprofile.png'; 
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -238,7 +238,7 @@ export default function Contact() {
 
             <div className="mt-auto">
               <a 
-                href="https://www.linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&followMember=vivekanandakadukuntla" 
+                href="https://www.linkedin.com/in/vivekanandakadukuntla/" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className={buttonBaseClasses}
