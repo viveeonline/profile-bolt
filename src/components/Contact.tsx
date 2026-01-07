@@ -1,5 +1,6 @@
-import { Send, Sparkles, ArrowRight, CheckCircle2, User, Mail, MessageSquare } from 'lucide-react';
+import { Send, Handshake, ArrowRight, CheckCircle2, Linkedin, Mail } from 'lucide-react';
 import { useState } from 'react';
+import profileImg from './vkprofile.png'; // Importing your profile pic
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -57,11 +58,18 @@ export default function Contact() {
     });
   };
 
-  // Shared classes for consistent card look
+  // 🎨 SHARED STYLES
+  // Consistent Card Style
   const cardClasses = "bg-white p-8 lg:p-10 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col h-full";
   
-  // Shared classes for buttons (Size & Shape)
-  const buttonBaseClasses = "w-full h-14 inline-flex items-center justify-center gap-2 rounded-xl font-bold text-white transition-all duration-300 transform hover:scale-[1.02] shadow-md";
+  // Consistent Icon Container (Blue Background)
+  const iconContainerClasses = "w-12 h-12 bg-blue-50 rounded-2xl flex items-center justify-center mb-6";
+  
+  // Consistent Icon Color (Blue-600)
+  const iconClasses = "w-6 h-6 text-blue-600";
+
+  // Consistent Button (LinkedIn Blue #0A66C2)
+  const buttonBaseClasses = "w-full h-14 inline-flex items-center justify-center gap-2 rounded-xl font-bold text-white transition-all duration-300 transform hover:scale-[1.02] shadow-md bg-[#0A66C2] hover:bg-[#004182]";
 
   return (
     <section id="contact" className="py-24 bg-slate-50 border-t border-slate-200">
@@ -85,8 +93,8 @@ export default function Contact() {
           {/* COLUMN 1: WORK WITH ME (Topmate Services)          */}
           {/* -------------------------------------------------- */}
           <div className={cardClasses}>
-            <div className="w-12 h-12 bg-emerald-100 rounded-2xl flex items-center justify-center mb-6">
-              <Sparkles className="w-6 h-6 text-emerald-700" />
+            <div className={iconContainerClasses}>
+              <Handshake className={iconClasses} />
             </div>
             
             <h3 className="text-2xl font-bold text-slate-900 mb-2">Work With Me</h3>
@@ -95,9 +103,9 @@ export default function Contact() {
             </p>
 
             {/* Service List */}
-            <div className="space-y-4 mb-8 flex-grow">
+            <div className="space-y-5 mb-8 flex-grow">
               <div className="flex items-start gap-3">
-                <CheckCircle2 className="w-5 h-5 text-emerald-600 mt-0.5 flex-shrink-0" />
+                <CheckCircle2 className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
                 <div>
                   <h4 className="font-bold text-slate-800 text-sm">Partner & Vendor Presentation</h4>
                   <p className="text-xs text-slate-500">Priority product demos & pitches.</p>
@@ -111,17 +119,10 @@ export default function Contact() {
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <CheckCircle2 className="w-5 h-5 text-purple-600 mt-0.5 flex-shrink-0" />
+                <CheckCircle2 className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
                 <div>
                   <h4 className="font-bold text-slate-800 text-sm">1:1 Career Mentorship</h4>
                   <p className="text-xs text-slate-500">For Aspiring Leaders.</p>
-                </div>
-              </div>
-               <div className="flex items-start gap-3">
-                <CheckCircle2 className="w-5 h-5 text-amber-600 mt-0.5 flex-shrink-0" />
-                <div>
-                  <h4 className="font-bold text-slate-800 text-sm">Resume & Brand Audit</h4>
-                  <p className="text-xs text-slate-500">Feedback from Hiring VP.</p>
                 </div>
               </div>
             </div>
@@ -131,7 +132,7 @@ export default function Contact() {
                 href="https://topmate.io/vivekananda_kadukuntla" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className={`${buttonBaseClasses} bg-slate-900 hover:bg-slate-800`}
+                className={buttonBaseClasses}
               >
                 Book on Topmate <ArrowRight className="w-5 h-5" />
               </a>
@@ -145,8 +146,8 @@ export default function Contact() {
           {/* COLUMN 2: SAY HELLO (Web3Forms)                    */}
           {/* -------------------------------------------------- */}
           <div className={cardClasses}>
-            <div className="w-12 h-12 bg-blue-100 rounded-2xl flex items-center justify-center mb-6">
-              <Mail className="w-6 h-6 text-blue-700" />
+            <div className={iconContainerClasses}>
+              <Mail className={iconClasses} />
             </div>
 
             <h3 className="text-2xl font-bold text-slate-900 mb-2">Send a Message</h3>
@@ -186,7 +187,7 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className={`${buttonBaseClasses} bg-blue-600 hover:bg-blue-700 disabled:opacity-70 disabled:cursor-not-allowed`}
+                  className={`${buttonBaseClasses} disabled:opacity-70 disabled:cursor-not-allowed`}
                 >
                   {isSubmitting ? 'Sending...' : <><Send className="w-5 h-5" /> Send Message</>}
                 </button>
@@ -208,30 +209,29 @@ export default function Contact() {
           {/* COLUMN 3: NETWORK (LinkedIn)                       */}
           {/* -------------------------------------------------- */}
           <div className={cardClasses}>
-            <div className="w-12 h-12 bg-sky-100 rounded-2xl flex items-center justify-center mb-6">
-              <User className="w-6 h-6 text-[#0A66C2]" />
+            <div className={iconContainerClasses}>
+              <Linkedin className={iconClasses} />
             </div>
 
             <h3 className="text-2xl font-bold text-slate-900 mb-2">Let's Connect</h3>
-            <p className="text-slate-500 text-sm mb-8">
-              Join my network for daily insights on AI, Leadership, and the future of work.
+            <p className="text-slate-500 text-sm mb-6 leading-relaxed">
+              Join my professional network on LinkedIn for updates, resources, and conversations that matter in L&D and career development.
             </p>
 
             <div className="flex flex-col items-center mb-8 flex-grow justify-center">
+                {/* Profile Pic with Online Status Dot */}
                 <div className="w-24 h-24 p-1 rounded-full border-2 border-dashed border-slate-300 mb-4 relative">
                     <img 
-                        src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" 
-                        alt="LinkedIn" 
+                        src={profileImg} 
+                        alt="Vivekananda Kadukuntla" 
                         className="w-full h-full object-cover rounded-full"
                     />
                      <div className="absolute bottom-1 right-1 w-5 h-5 bg-green-500 border-2 border-white rounded-full"></div>
                 </div>
+                
                 <div className="text-center space-y-2">
                     <p className="text-sm font-bold text-slate-800 flex items-center gap-2 justify-center">
-                        <CheckCircle2 className="w-4 h-4 text-[#0A66C2]" /> 23,000+ Followers
-                    </p>
-                    <p className="text-sm font-bold text-slate-800 flex items-center gap-2 justify-center">
-                        <MessageSquare className="w-4 h-4 text-[#0A66C2]" /> Daily Updates
+                        <CheckCircle2 className="w-4 h-4 text-blue-600" /> 4,100+ Followers
                     </p>
                 </div>
             </div>
@@ -241,7 +241,7 @@ export default function Contact() {
                 href="https://www.linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&followMember=vivekanandakadukuntla" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`${buttonBaseClasses} bg-[#0A66C2] hover:bg-[#004182]`}
+                className={buttonBaseClasses}
               >
                 Follow on LinkedIn
               </a>
