@@ -2,7 +2,7 @@ import { Linkedin, Mail, MapPin } from 'lucide-react';
 import profileImg from './vkprofile.png';
 
 // ==========================================
-// 1. LOCAL LOGO IMPORTS (Complete Set)
+// LOCAL LOGO IMPORTS
 // ==========================================
 import pegaLogo from './pegalogo.png';
 import prosciLogo from './proscilogo.png';
@@ -12,9 +12,9 @@ import mbtiLogo from './mbtilogo.gif';
 import ngaLogo from './ngalogo.png';
 import prolificsLogo from './prolificslogo.png';
 import isbLogo from './isblogo.png';
-import istdLogo from './istdlogo.png';       // NEW
-import courseraLogo from './courseralogo.png'; // NEW
-import sapLogo from './saplogo.jpg';           // NEW
+import istdLogo from './istdlogo.png';      
+import courseraLogo from './courseralogo.png';
+import sapLogo from './saplogo.jpg';          
 
 export default function Hero() {
 
@@ -59,20 +59,26 @@ export default function Hero() {
             </p>
 
             <div className="flex flex-wrap gap-4 justify-center lg:justify-start mb-12">
+              {/* 
+                  🟢 UPDATED LINKEDIN BUTTON 
+                  - Uses Official LinkedIn Blue (#0A66C2)
+                  - Added White Border (border-white/20) for contrast against dark background
+                  - Added Glow Shadow for depth
+              */}
               <a
                 href="https://www.linkedin.com/in/vivekanandakadukuntla/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg shadow-blue-900/50"
+                className="flex items-center gap-3 bg-[#0A66C2] hover:bg-[#004182] text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-[0_0_20px_rgba(10,102,194,0.4)] border border-white/20"
               >
                 <Linkedin className="w-5 h-5 fill-current" />
                 <span>LinkedIn Profile</span>
               </a>
               
-              {/* UPDATED SECONDARY BUTTON: Glassmorphic Style */}
+              {/* SECONDARY BUTTON: Glassmorphic Style (Stays clear to avoid visual competition) */}
               <a
                 href="#contact"
-                className="flex items-center gap-3 bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 border border-white/20 backdrop-blur-sm"
+                className="flex items-center gap-3 bg-white/5 hover:bg-white/10 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 border border-white/20 backdrop-blur-sm"
               >
                 <Mail className="w-5 h-5" />
                 <span>Contact Me</span>
