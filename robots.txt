@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://viveeonline.com/sitemap.xml
