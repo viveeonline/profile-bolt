@@ -231,7 +231,7 @@ export default function Contact() {
                 
                 <div className="text-center space-y-2">
                     <p className="text-sm font-bold text-slate-800 flex items-center gap-2 justify-center">
-                        <CheckCircle2 className="w-4 h-4 text-blue-600" /> 4,100+ Followers
+                        <CheckCircle2 className="w-4 h-4 text-blue-600" /> 4,200+ Followers
                     </p>
                 </div>
             </div>
