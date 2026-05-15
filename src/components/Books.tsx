@@ -7,83 +7,90 @@ import { useRef } from 'react';
 const BOOKS_DATA = [
   {
     id: '1',
+    title: 'mindset',
+    author: 'Dr Carol S Dweck',
+    cover_image_url: 'https://m.media-amazon.com/images/I/51wsZI9x8KL._SY342_.jpg',
+    affiliate_link: 'https://amzn.to/4dm2XqN'
+  },
+  {
+    id: '2',
     title: 'Multipliers',
     author: 'Liz Wiseman',
     cover_image_url: 'https://m.media-amazon.com/images/I/81UgpHs1vrL._SY385_.jpg',
     affiliate_link: 'https://amzn.to/4bjv6xL'
   },
   {
-    id: '2',
+    id: '3',
     title: 'Atomic Habits',
     author: 'James Clear',
     cover_image_url: 'https://m.media-amazon.com/images/I/817HaeblezL._SY385_.jpg',
     affiliate_link: 'https://amzn.to/4qCktL0'
   },
   {
-    id: '3',
+    id: '4',
     title: 'The Thinking Machine',
     author: 'Stephen Witt',
     cover_image_url: 'https://m.media-amazon.com/images/I/41PSQ-FuQqL._SY445_SX342_PQ99_.jpg',
     affiliate_link: 'https://amzn.to/3Lj7JK8'
   },
   {
-    id: '4',
+    id: '5',
     title: 'Start with Why',
     author: 'Simon Sinek',
     cover_image_url: 'https://m.media-amazon.com/images/I/71FPH6GnDgL._SY385_.jpg',
     affiliate_link: 'https://amzn.to/4989V0g'
   },
   {
-    id: '5',
+    id: '6',
     title: 'The Chimp Paradox',
     author: 'Prof Steve Peters',
     cover_image_url: 'https://m.media-amazon.com/images/I/81C18yb1jHL._SY425_.jpg',
     affiliate_link: 'https://amzn.to/3Yojx0H'
   },
   {
-    id: '6',
+    id: '7',
     title: 'Good to Great',
     author: 'Jim Collins',
     cover_image_url: 'https://m.media-amazon.com/images/I/71LhjimPd8L._SY385_.jpg',
     affiliate_link: 'https://amzn.to/4smMg3K'
   },
   {
-    id: '7',
+    id: '8',
     title: 'The Gifts of Imperfection',
     author: 'Brené Brown',
     cover_image_url: 'https://m.media-amazon.com/images/I/71M1xmVuhnL._SY425_.jpg',
     affiliate_link: 'https://amzn.to/3YnFsoN'
   },
   {
-    id: '8',
+    id: '9',
     title: 'Dare to Lead',
     author: 'Brené Brown',
     cover_image_url: 'https://m.media-amazon.com/images/I/71LuaXKsHAL._SY425_.jpg',
     affiliate_link: 'https://amzn.to/4jszX1Z'
   },
   {
-    id: '9',
+    id: '10',
     title: 'The Almanack Of Naval Ravikant',
     author: 'Eric Jorgenson',
     cover_image_url: 'https://m.media-amazon.com/images/I/515M4WOE73L._SY466_.jpg',
     affiliate_link: 'https://amzn.to/4bor33c'
   },
 {
-    id: '10',
+    id: '11',
     title: 'Nudge',
     author: 'Richard H. Thaler Cass R Sunstein',
     cover_image_url: 'https://m.media-amazon.com/images/I/71FlmujR6vL._SY385_.jpg',
     affiliate_link: 'https://amzn.to/3YqEyrF'
   },
 {
-    id: '11',
+    id: '12',
     title: "Man's Search For Meaning",
     author: 'Viktor E Frankl',
     cover_image_url: 'https://m.media-amazon.com/images/I/81FDXdnrh7L._SY425_.jpg',
     affiliate_link: 'https://amzn.to/49hr1Yj'
   },
 {
-    id: '12',
+    id: '13',
     title: 'Think Like a Monk',
     author: 'Jay Shetty',
     cover_image_url: 'https://m.media-amazon.com/images/I/81fCvIBRpmL._SY385_.jpg',
