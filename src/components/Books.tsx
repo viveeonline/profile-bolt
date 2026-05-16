@@ -123,7 +123,7 @@ export default function Books() {
       <div className="container mx-auto px-6 lg:px-12">
         <div className="max-w-4xl mx-auto text-center mb-12">
           <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
-            Books I've Read
+            Recent Books I've Read
           </h2>
           <div className="w-24 h-1 bg-blue-600 mx-auto mb-8 rounded-full"></div>
           <p className="text-lg text-slate-600">
